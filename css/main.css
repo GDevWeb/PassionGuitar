@@ -1,2 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #000000;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/* Conteneur principal */
+.container {
+  width: 100%;
+}
+
+.container .navbar {
+  background-color: #000000;
+  color: #C0C0C0;
+  padding: 10px;
+  border: 0.3rem solid #FF0000;
+  border-radius: 0.3rem;
+}
+.container .navbar figure {
+  display: flex;
+  justify-content: flex-end;
+  flex-basis: 40%;
+}
+.container .navbar-menu {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+.container .navbar-menu .navbar-item {
+  margin-left: 20px;
+}
+.container .navbar-toggle {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .container .navbar-toggle {
+    display: block;
+  }
+}
+.container header#heroBanner {
+  width: 100%;
+  height: 100vh;
+  color: #C0C0C0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.container header#heroBanner video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  border: 0.3rem solid #FF0000;
+  border-radius: 0.3rem;
+}
+@media screen and (max-width: 768px) {
+  .container .navbar-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    padding: 10px;
+    display: none;
+  }
+  .container .navbar-menu.show {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .navbar-menu .navbar-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

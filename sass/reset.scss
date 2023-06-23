@@ -1,5 +1,5 @@
-@import './reset.scss';
 @import './preset.scss';
+@import './colors.scss';
 
 * {
     box-sizing: border-box;
@@ -15,11 +15,18 @@
     font-size: 1.6rem;
     background-color: $mainColor;
   }
+
+  li{
+    list-style: none;
+  }
+
+  a{
+    text-decoration: none;
+    color: $tertiaryColor;
+  }
   
   /* Conteneur principal */
   .container {
     width: 100%; 
-    max-width: 1200px; 
-    margin: 0 auto; 
   }
   
