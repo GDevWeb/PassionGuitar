@@ -1,0 +1,25 @@
+@import './reset.scss';
+@import './preset.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html{
+    font-size: 62.5%;
+  }
+
+  body{
+    font-size: 1.6rem;
+    background-color: $mainColor;
+  }
+  
+  /* Conteneur principal */
+  .container {
+    width: 100%; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+  }
+  

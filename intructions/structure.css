@@ -1,0 +1,12 @@
+project/
+├── index.html
+├── styles/
+│   ├── main.scss
+│   ├── _variables.scss
+│   └── _reset.scss
+├── scripts/
+│   ├── main.js
+│   └── utils.js
+└── assets/
+    ├── images/
+    └── fonts/
