@@ -1,38 +1,24 @@
 @import './preset.scss';
 @import './colors.scss';
 
+// Global Styles
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  html{
-    font-size: 62.5%;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body{
-    font-size: 1.6rem;
-    color: $tertiaryColor;
-    background-color: $mainColor;
-  }
+html {
+  font-size: 62.5%;
+}
 
-  li{
-    list-style: none;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
 
-  a{
-    text-decoration: none;
-    color: $tertiaryColor;
-  }
-  
-  /* Conteneur principal */
-  .container {
-    width: 100%; 
-  }
-
-  section{
-    height: 100vh;
-    padding: 1rem;
-  }
-  
+.container {
+  max-width: 120rem; 
+  margin: 0 auto;
+  padding: 2rem; 
+}
