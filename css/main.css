@@ -116,8 +116,6 @@ section {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  border: 0.3rem solid #FF0000;
-  border-radius: 0.3rem;
 }
 
 /*# sourceMappingURL=main.css.map */
