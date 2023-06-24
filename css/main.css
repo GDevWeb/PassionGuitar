@@ -150,9 +150,23 @@ nav {
 .cards .btnMore-container {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-basis: 5%;
   margin: 0.3rem;
+}
+.cards .btnPrice {
+  flex-basis: 40%;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  transition: background-color 0.3s ease;
+}
+.cards .btnPrice:hover {
+  background-color: #666;
 }
 .cards .btnMore {
   flex-basis: 40%;
@@ -201,6 +215,7 @@ nav {
 
 .form-group textarea {
   resize: vertical;
+  resize: none;
 }
 
 .contact-form .btn {
