@@ -13,6 +13,7 @@
 
   body{
     font-size: 1.6rem;
+    color: $tertiaryColor;
     background-color: $mainColor;
   }
 
@@ -28,5 +29,9 @@
   /* Conteneur principal */
   .container {
     width: 100%; 
+  }
+
+  section{
+    height: 100vh;
   }
   

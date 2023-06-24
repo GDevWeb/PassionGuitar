@@ -1,7 +1,15 @@
-const navbarToggle = document.querySelector('.navbar-toggle');
-const navbarMenu = document.querySelector('.navbar-menu');
+const liste = document.querySelector(".liste");
+const btnResponsive = document.querySelector(".btn-responsive");
 
-navbarToggle.addEventListener('click', () => {
-  navbarMenu.classList.toggle('show');
-  alert("click")
-});
+btnResponsive.addEventListener("click", () => {
+
+    liste.classList.toggle("show");
+})
+
+window.addEventListener("resize", () =>{
+
+    if(window.innerWidth > 650){
+        liste.classList.remove("show")
+    }
+
+})

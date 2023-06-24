@@ -2,9 +2,6 @@
 @import './preset.scss';
 @import './colors.scss';
 
-// Variables
-$navbar-background: $mainColor;
-$navbar-text-color: $quatersColor;
 
 // Mixins
 @mixin media-query($breakpoint) {
@@ -16,43 +13,93 @@ $navbar-text-color: $quatersColor;
 .container {
 
     // Styles
-    .navbar {
-        background-color: $navbar-background;
-        color: $navbar-text-color;
-        padding: 10px;
-        @include BorderRedRadius;
-
-        figure {
-            @include Flex;
-            justify-content: flex-end;
-            flex-basis: 40%;
-        }
-
-        &-menu {
-            list-style: none;
-            display: flex;
-            justify-content: flex-end;
-
-            & .navbar-item {
-                margin-left: 20px;
-            }
-        }
-
-        &-toggle {
-            display: none;
-
-            @include media-query(768px) {
-                display: block;
-            }
-        }
-    }
-    header#heroBanner {
-        width: 100%;
-        height: 100vh;
-        color: $quatersColor;
+    nav {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        min-height: 5rem;
+        height: auto;
+        background-color: $tertiaryColor;
+        background-color: $mainColor;
+        color: $quatersColor;
+    }
+    
+    .liste {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .items {
+        margin: 0 1rem;
+        font-style: 2rem;
+
+        a {
+            font-size: 2rem;
+            text-decoration: none;
+            color: $quatersColor;
+
+            &:hover{
+                transition: all 0.2s ease-in-out;
+                color: $secondaryColor; /* Assurez-vous de définir la valeur de $secondaryColor */
+              }           
+        }
+
+    }
+
+    .btn-responsive {
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        padding: 0.5rem;
+        display: none;
+    }
+
+    @media screen and (max-width: 650px) {
+
+        nav{
+            display: flex;
+        }
+        .liste {
+            position: relative;
+            top: 7rem;
+            display: none;
+            width: 100%;
+            height: auto;
+            background: $mainColor;
+            color: $tertiaryColor;
+            padding: 1rem;
+        }
+        
+        .liste.show {
+            display: block;
+        }
+        
+        .items {
+            height: 7rem;
+            width: 100%;
+            text-align: center;
+            line-height: 7rem;
+            border-bottom: 0.1rem solid $quatersColor;
+        }
+
+
+        .btn-responsive {
+            display: block;
+        }
+
+    }
+
+    header#heroBanner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        color: $quatersColor;
         text-transform: uppercase;
 
         video {
@@ -66,30 +113,7 @@ $navbar-text-color: $quatersColor;
             @include BorderRedRadius;
         }
     }
-    
-    @include media-query(768px) {
-        .navbar {
-            &-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: $navbar-background;
-                padding: 10px;
-                display: none;
-                
-                &.show {
-                    display: flex;
-                    flex-direction: column;
-                }
-                
-                & .navbar-item {
-                    margin-left: 0;
-                    margin-bottom: 10px;
-                }
-            }
-        }
-  }
-    }
-    // end container 
-  
+
+}
+
+// end container 
