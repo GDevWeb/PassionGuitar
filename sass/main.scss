@@ -22,6 +22,7 @@ nav {
 
 .items a {
   text-decoration: none;
+  font-size: 2rem;
   color: $fontColor;
   padding: 0.5rem; 
 }
@@ -109,6 +110,7 @@ nav {
   border-radius: 0.4rem; 
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1); 
   overflow: hidden;
+  
 }
 
 .card img {
@@ -199,10 +201,39 @@ nav {
   background-color: $secondaryColor;
 }
 
+/* Back to Top Button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 8rem;
+    right: 2rem;
+    background-color: #333;
+    color: $fontColor;
+    border: none;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2.4rem;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .back-to-top-btn.show {
+    display: block;
+  }
+    
+  .back-to-top-btn:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: $secondaryColor;
+    color: orange;
+  }
+  
+  .back-to-top-btn i {
+    font-size: 2rem;
+  }
 /* Footer */
 footer {
   background-color: $primaryColor;
-  color: #fff;
+  color: $fontColor;
   padding: 2rem; 
   text-align: center;
 }
