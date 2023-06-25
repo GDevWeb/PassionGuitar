@@ -361,6 +361,21 @@ footer {
     width: 100%;
     margin-bottom: 1rem;
   }
+  .truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+  }
+  .truncate .btnMore-container {
+    justify-content: space-evenly;
+  }
+  .truncate .btnMore-container .btnMore {
+    width: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

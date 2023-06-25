@@ -50,9 +50,9 @@ function displayProducts(products) {
     btnCat.href = "#";
     btnCat.classList.add("btnMore");
     btnCat.textContent = product.cat;
-    // btnCat.alt = product.cat;
-    // btnCat.ariaLabel = product.cat;
-    // btnCat.title = product.cat;
+    btnCat.alt = product.cat;
+    btnCat.ariaLabel = product.cat;
+    btnCat.title = product.cat;
     btnCat.style.backgroundColor = product.backgroundButton;
     btnMoreContainer.appendChild(btnCat);
     card.appendChild(btnMoreContainer);

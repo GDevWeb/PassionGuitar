@@ -378,23 +378,23 @@ footer {
         }
     }
 
+
+    .truncate {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: break-word;
+    
+    
+      .btnMore-container {
+        justify-content: space-evenly;
+    
+        .btnMore{
+            width: 45%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;    }
+      }
+      }
 }
 
-
-// .truncate {
-//   white-space: nowrap;
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-//   word-wrap: break-word;
-
-
-//   .btnMore-container {
-//     justify-content: space-evenly;
-
-//     .btnMore{
-//         width: 45%;
-//         white-space: nowrap;
-//         overflow: hidden;
-//         text-overflow: ellipsis;    }
-//   }
-//   }
