@@ -73,20 +73,75 @@ nav {
 }
 
 /* About Section */
-#about {
-    margin: 4rem 0;
+section#about {
+    margin: 5rem 0;
+
+    p {
+        font-size: 1.4rem;
+        text-align: justify;
+    }
+
 }
 
+/* Selection Section */
+#selection {
 
-#about p {
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-align: justify;
-}
+    .filter-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
 
-/* Products Section */
-#products {
-    margin: 4rem 0;
+        p {
+            flex-basis: 10%;
+            font-size: 2rem;
+            color: $primaryColor;
+            text-align: right;
+        }
+
+        .filter {
+            flex-basis: 60%;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0.5rem;
+
+            button.btnFilter {
+                flex-basis: 20%;
+                display: inline-block;
+                padding: 1.2rem;
+                margin: 0.2rem;
+                background-color: $primaryColor;
+                font-size: 1rem;
+                font-weight: bold;
+                color: $fontColor;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 0.4rem;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $secondaryColor;
+                }
+
+            }
+
+            .btnFilter.all {
+                background-color: green;
+            }
+
+            .btnFilter.electric {
+                background-color: #FF0000;
+            }
+
+            .btnFilter.electro_accoustic {
+                background-color: #4682B4;
+            }
+
+            .btnFilter.classique {
+                background-color: #964B00;
+            }
+
+        }
+    }
 }
 
 
@@ -128,7 +183,7 @@ nav {
                 font-size: 1.6rem;
                 margin-bottom: 1.5rem;
             }
-            
+
         }
 
     }
@@ -147,6 +202,7 @@ nav {
         display: inline-block;
         padding: 1rem 2rem;
         background-color: $primaryColor;
+        font-size: 1.2rem;
         color: $fontColor;
         text-align: center;
         text-decoration: none;
@@ -156,14 +212,15 @@ nav {
         &:hover {
             background-color: $secondaryColor;
         }
-    
+
     }
-    
+
     .btnMore {
         flex-basis: 40%;
         display: inline-block;
         padding: 1rem 2rem;
         background-color: $primaryColor;
+        font-size: 1.2rem;
         color: $fontColor;
         text-align: center;
         text-decoration: none;
@@ -224,6 +281,7 @@ nav {
 .contact-form .btn:hover {
     background-color: $secondaryColor;
 }
+
 // end form 
 
 /* Back to Top Button */
@@ -263,4 +321,3 @@ footer {
     padding: 2rem;
     text-align: center;
 }
-      
