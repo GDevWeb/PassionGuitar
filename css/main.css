@@ -32,6 +32,10 @@ section {
   text-align: justify;
 }
 
+.filter.show {
+  visibility: hidden;
+}
+
 /* Navigation */
 nav {
   background-color: #333;
@@ -42,6 +46,7 @@ nav {
 }
 
 .liste {
+  margin: auto;
   list-style-type: none;
   display: flex;
 }
@@ -59,7 +64,7 @@ nav {
 
 .items a:hover {
   transition: all 0.2s ease-in-out;
-  color: orange;
+  color: #ffa500;
 }
 
 .btn-responsive {
@@ -158,13 +163,25 @@ section#about p {
 #selection .filter-container .filter .btnFilter.classique {
   background-color: #964B00;
 }
+#selection .filter-container .btnShowFilter {
+  flex-basis: 10%;
+  border: 0.1rem solid transparent;
+  padding: 0.1rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+#selection .showFilter {
+  visibility: hidden;
+}
 
 .cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 .cards .card {
+  flex-basis: 33%;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -181,8 +198,8 @@ section#about p {
   object-fit: cover;
 }
 .cards .card .card-content {
+  flex-basis: 70%;
   padding: 1.5rem;
-  flex-basis: 60%;
 }
 .cards .card .card-content h3 {
   flex-basis: 10%;
@@ -239,37 +256,41 @@ section#about p {
 }
 
 .contact-form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
 }
-
-.form-group {
+.contact-form .form-group {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
-
-.form-group label {
+.contact-form .form-group label {
+  text-align: center;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
+.contact-form .form-group input,
+.contact-form .form-group select,
+.contact-form .form-group textarea {
+  width: 50%;
+  margin: auto;
   padding: 1rem;
   font-size: 1.6rem;
   border-radius: 0.4rem;
   border: 0.1rem solid #ccc;
 }
-
-.form-group textarea {
+.contact-form .form-group textarea {
   resize: vertical;
   resize: none;
 }
-
 .contact-form .btn {
+  flex: 0 0 20%;
   display: inline-block;
+  width: 20%;
+  margin: auto;
   padding: 1rem 2rem;
   background-color: #333;
   color: #fff;
@@ -277,7 +298,6 @@ section#about p {
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
 }
-
 .contact-form .btn:hover {
   background-color: #666;
 }
@@ -308,16 +328,39 @@ section#about p {
   color: orange;
 }
 
-.back-to-top-btn i {
-  font-size: 2rem;
-}
-
-/* Footer */
 footer {
   background-color: #333;
   color: #fff;
   padding: 2rem;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-responsive {
+    display: block;
+  }
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .liste {
+    display: none;
+  }
+  .liste.show {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .liste.show .items {
+    border-bottom: 0.1rem solid #666;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -12,6 +12,7 @@ nav {
 }
 
 .liste {
+    margin: auto;
     list-style-type: none;
     display: flex;
 }
@@ -29,7 +30,7 @@ nav {
 
 .items a:hover {
     transition: all 0.2s ease-in-out;
-    color: orange;
+    color: #ffa500;
 }
 
 .btn-responsive {
@@ -140,17 +141,34 @@ section#about {
                 background-color: #964B00;
             }
 
+
         }
+
+
+        .btnShowFilter {
+            flex-basis: 10%;
+            border: 0.1rem solid transparent;
+            padding: 0.1rem;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    }
+
+    // Toggle Filters : 
+    .showFilter {
+        visibility: hidden;
     }
 }
 
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    flex-wrap: wrap;
 
     .card {
+        flex-basis: 33%;
         display: flex;
         flex-direction: column;
         background-color: $fontColor;
@@ -169,8 +187,8 @@ section#about {
         }
 
         .card-content {
+            flex-basis: 70%;
             padding: 1.5rem;
-            flex-basis: 60%;
 
             h3 {
                 flex-basis: 10%;
@@ -239,47 +257,56 @@ section#about {
 }
 
 .contact-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-}
-
-.form-group {
     display: flex;
     flex-direction: column;
-}
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
 
-.form-group label {
-    font-size: 1.6rem;
-    margin-bottom: 0.5rem;
-}
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    padding: 1rem;
-    font-size: 1.6rem;
-    border-radius: 0.4rem;
-    border: 0.1rem solid #ccc;
-}
+        label {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
 
-.form-group textarea {
-    resize: vertical;
-    resize: none;
-}
+        input,
+        select,
+        textarea {
+            width: 50%;
+            margin: auto;
+            padding: 1rem;
+            font-size: 1.6rem;
+            border-radius: 0.4rem;
+            border: 0.1rem solid #ccc;
+        }
 
-.contact-form .btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: $primaryColor;
-    color: $fontColor;
-    text-decoration: none;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s ease;
-}
+        textarea {
+            resize: vertical;
+            resize: none;
+        }
+    }
 
-.contact-form .btn:hover {
-    background-color: $secondaryColor;
+    .btn {
+        flex: 0 0 20%;
+        display: inline-block;
+        width: 20%;
+        margin: auto;
+        padding: 1rem 2rem;
+        background-color: $primaryColor;
+        color: $fontColor;
+        text-decoration: none;
+        border-radius: 0.4rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $secondaryColor;
+        }
+    }
 }
 
 // end form 
@@ -301,6 +328,7 @@ section#about {
 }
 
 .back-to-top-btn.show {
+
     display: block;
 }
 
@@ -310,14 +338,63 @@ section#about {
     color: orange;
 }
 
-.back-to-top-btn i {
-    font-size: 2rem;
-}
-
-/* Footer */
+// /* Footer */
 footer {
     background-color: $primaryColor;
     color: $fontColor;
     padding: 2rem;
     text-align: center;
 }
+
+
+@media screen and (max-width: 768px) {
+    .btn-responsive {
+        display: block;
+    }
+
+    nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .liste {
+        display: none;
+    }
+
+    .liste.show {
+        display: flex;
+        flex-basis: 50%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        .items {
+            border-bottom: 0.1rem solid $secondaryColor;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+    }
+
+}
+
+
+// .truncate {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   word-wrap: break-word;
+
+
+//   .btnMore-container {
+//     justify-content: space-evenly;
+
+//     .btnMore{
+//         width: 45%;
+//         white-space: nowrap;
+//         overflow: hidden;
+//         text-overflow: ellipsis;    }
+//   }
+//   }
