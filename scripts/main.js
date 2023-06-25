@@ -34,7 +34,7 @@ function displayProducts(products) {
     const title = document.createElement("h3");
     title.textContent = product.mark;
     const ref = document.createElement("h4");
-    ref.textContent = `Reference: ${product.ref}`;
+    ref.textContent = `Référence: ${product.ref}`;
     cardContent.appendChild(ref);
 
     const description = document.createElement("p");

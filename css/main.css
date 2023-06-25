@@ -207,6 +207,9 @@ section#about p {
   margin-bottom: 1rem;
   text-align: center;
 }
+.cards .card .card-content h4 {
+  text-align: center;
+}
 .cards .card .card-content p {
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
@@ -256,41 +259,37 @@ section#about p {
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
 }
-.contact-form .form-group {
-  flex: 1;
+
+.form-group {
   display: flex;
   flex-direction: column;
 }
-.contact-form .form-group label {
-  text-align: center;
+
+.form-group label {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
-.contact-form .form-group input,
-.contact-form .form-group select,
-.contact-form .form-group textarea {
-  width: 50%;
-  margin: auto;
+
+.form-group input,
+.form-group select,
+.form-group textarea {
   padding: 1rem;
   font-size: 1.6rem;
   border-radius: 0.4rem;
   border: 0.1rem solid #ccc;
 }
-.contact-form .form-group textarea {
+
+.form-group textarea {
   resize: vertical;
   resize: none;
 }
+
 .contact-form .btn {
-  flex: 0 0 20%;
   display: inline-block;
-  width: 20%;
-  margin: auto;
   padding: 1rem 2rem;
   background-color: #333;
   color: #fff;
@@ -298,6 +297,7 @@ section#about p {
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
 }
+
 .contact-form .btn:hover {
   background-color: #666;
 }

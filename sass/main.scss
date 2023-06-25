@@ -197,6 +197,10 @@ section#about {
                 text-align: center;
             }
 
+            h4{
+                text-align: center;
+            }
+
             p {
                 font-size: 1.6rem;
                 margin-bottom: 1.5rem;
@@ -256,57 +260,103 @@ section#about {
     margin: 4rem 0;
 }
 
+// in flex : 
+// .contact-form {
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     gap: 2rem;
+
+//     .form-group {
+//         flex: 1;
+//         display: flex;
+//         flex-direction: column;
+
+//         label {
+//             text-align: center;
+//             font-size: 1.6rem;
+//             margin-bottom: 0.5rem;
+//         }
+
+//         input,
+//         select,
+//         textarea {
+//             width: 50%;
+//             margin: auto;
+//             padding: 1rem;
+//             font-size: 1.6rem;
+//             border-radius: 0.4rem;
+//             border: 0.1rem solid #ccc;
+//         }
+
+//         textarea {
+//             resize: vertical;
+//             resize: none;
+//         }
+//     }
+
+//     .btn {
+//         flex: 0 0 20%;
+//         display: inline-block;
+//         width: 20%;
+//         margin: auto;
+//         padding: 1rem 2rem;
+//         background-color: $primaryColor;
+//         color: $fontColor;
+//         text-decoration: none;
+//         border-radius: 0.4rem;
+//         transition: background-color 0.3s ease;
+
+//         &:hover {
+//             background-color: $secondaryColor;
+//         }
+//     }
+// }
+
+// in grid : 
 .contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
+}
 
-    .form-group {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
+.form-group label {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
 
-        label {
-            text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: 0.4rem;
+    border: 0.1rem solid #ccc;
+}
 
-        input,
-        select,
-        textarea {
-            width: 50%;
-            margin: auto;
-            padding: 1rem;
-            font-size: 1.6rem;
-            border-radius: 0.4rem;
-            border: 0.1rem solid #ccc;
-        }
+.form-group textarea {
+    resize: vertical;
+    resize: none;
+}
 
-        textarea {
-            resize: vertical;
-            resize: none;
-        }
-    }
+.contact-form .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: $primaryColor;
+    color: $fontColor;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease;
+}
 
-    .btn {
-        flex: 0 0 20%;
-        display: inline-block;
-        width: 20%;
-        margin: auto;
-        padding: 1rem 2rem;
-        background-color: $primaryColor;
-        color: $fontColor;
-        text-decoration: none;
-        border-radius: 0.4rem;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: $secondaryColor;
-        }
-    }
+.contact-form .btn:hover {
+    background-color: $secondaryColor;
 }
 
 // end form 
