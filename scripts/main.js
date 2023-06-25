@@ -1,9 +1,8 @@
 import { productsTab } from "./productsTab.js";
 
-console.log(productsTab);
 
 document.addEventListener("DOMContentLoaded", () => {
-  const selectionContainer = document.querySelector("#products .cards");
+  const selectionContainer = document.querySelector("#selection .cards");
 
   productsTab.forEach((product) => {
     const card = document.createElement("div");
@@ -48,13 +47,27 @@ document.addEventListener("DOMContentLoaded", () => {
     btnMoreContainer.appendChild(btnPrice);
     card.appendChild(btnMoreContainer);
 
-
     selectionContainer.appendChild(card);
   });
 });
 
-// const allBTnCat = document.querySelectorAll("btnPrice");
-// allBTnCat.forEach((button) => button.addEventListener('click', (e) =>{
-//     e.preventDefault();
-//     console.log("click");
-// } ))
+
+const filteredByPrice = productsTab.filter(product => product.price < 200)
+console.log(filteredByPrice);
+
+const btnFilter = document.querySelectorAll(".btnFilter");
+
+btnFilter.forEach((button) => 
+
+button.addEventListener("click", (e) => {
+  
+  alert("click")
+  console.log(e.target.value)
+  
+  let catValue = (e.target.value)
+  
+  const filteredByCat = productsTab.filter(product => product.cat === `${catValue}`)
+  console.log(filteredByCat);
+  
+ } )
+)
