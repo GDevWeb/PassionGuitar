@@ -1,10 +1,24 @@
 import { productsTab } from "./productsTab.js";
 
+const btnFilter = document.querySelectorAll(".btnFilter");
 
-document.addEventListener("DOMContentLoaded", () => {
+btnFilter.forEach((button) =>
+  button.addEventListener("click", (e) => {
+    const category = e.target.value;
+    if (category === "all") {
+      displayProducts(productsTab); 
+    } else {
+      const filteredByCat = productsTab.filter((product) => product.cat === category);
+      displayProducts(filteredByCat); 
+    }
+  })
+);
+
+function displayProducts(products) {
   const selectionContainer = document.querySelector("#selection .cards");
+  selectionContainer.innerHTML = ""; 
 
-  productsTab.forEach((product) => {
+  products.forEach((product) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -20,9 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.createElement("h3");
     title.textContent = product.mark;
     const ref = document.createElement("h4");
-    ref.textContent = `Reference : ${product.ref}`;
-    cardContent.appendChild(ref)
-    
+    ref.textContent = `Reference: ${product.ref}`;
+    cardContent.appendChild(ref);
+
     const description = document.createElement("p");
     description.textContent = product.description;
     cardContent.appendChild(title);
@@ -35,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnCat = document.createElement("a");
     btnCat.href = "#";
     btnCat.classList.add("btnMore");
-    btnCat.textContent = `${product.cat}`;
-    btnCat.style.backgroundColor = `${product.backgroundButton}`
+    btnCat.textContent = product.cat;
+    btnCat.style.backgroundColor = product.backgroundButton;
     btnMoreContainer.appendChild(btnCat);
     card.appendChild(btnMoreContainer);
 
@@ -49,25 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectionContainer.appendChild(card);
   });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const selectionContainer = document.querySelector("#selection .cards");
+
+  displayProducts(productsTab); 
 });
-
-
-const filteredByPrice = productsTab.filter(product => product.price < 200)
-console.log(filteredByPrice);
-
-const btnFilter = document.querySelectorAll(".btnFilter");
-
-btnFilter.forEach((button) => 
-
-button.addEventListener("click", (e) => {
-  
-  alert("click")
-  console.log(e.target.value)
-  
-  let catValue = (e.target.value)
-  
-  const filteredByCat = productsTab.filter(product => product.cat === `${catValue}`)
-  console.log(filteredByCat);
-  
- } )
-)
