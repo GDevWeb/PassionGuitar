@@ -86,20 +86,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectionContainer = document.querySelector("#selection .cards");
 
   displayProducts(productsTab); 
-});
 
-// Toggle Filter : 
-  const filter = document.querySelector(".filter");
-  const btnShowFilter = document.querySelector(".btnShowFilter");
+  // Toggle Filter : 
+    const filter = document.querySelector(".filter");
+    const btnShowFilter = document.querySelector(".btnShowFilter");
+    
+    btnShowFilter.addEventListener("click", () => {
+      filter.classList.toggle("showFilter");
+    });
+
+    // toggle detail products :
+    const allbtnViewMore = document.querySelectorAll("button.btnViewMore");
+    console.log(allbtnViewMore); 
+    const detailProduct = document.querySelector("p.detail");
+    console.log(detailProduct);
+    
+    
+    allbtnViewMore.forEach(btnVM => {
+      btnVM.addEventListener("click", (e) => {
   
-  btnShowFilter.addEventListener("click", () => {
-    filter.classList.toggle("showFilter");
+        detailProduct.classList.toggle("toggleDetail")
+  
+  
+      });
+    });
   });
+  
 
-  const btnViewMore = document.querySelectorAll(".btnViewMore");
-  btnViewMore.forEach(btnVM => {
-    btnVM.addEventListener("click", (e) => {
-      btnVM.style.backgroundColor = "orange"
-      alert("click")
-    })
-  })
+  

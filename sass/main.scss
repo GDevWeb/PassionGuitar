@@ -255,7 +255,7 @@ section#about {
         background-color: $secondaryColor;
     }
 
-    .container-ViewMore{
+    .container-ViewMore {
         display: none;
     }
 }
@@ -436,47 +436,44 @@ footer {
     }
 }
 
-@media screen and (max-width: 425px){
-        .card {
-            flex-basis: 100%;
-            min-height: 56rem;
+@media screen and (max-width: 425px) {
+    section#selection .card {
+        flex-basis: 100%;
+        min-height: 55rem;
 
-            .container-ViewMore {
-                display: flex;
-                justify-content: flex-end;
+        .container-ViewMore {
+            display: flex;
+            justify-content: flex-end;
+            flex-basis: 40%;
+            width: 100%;
+            height: 15rem;
+
+            .btnViewMore {
                 flex-basis: 40%;
-                width: 100%;
-                height: 15rem;
+                display: inline-block;
+                padding: 1rem 2rem;
+                background-color: #ff4500;
+                font-size: 1.2rem;
+                color: $fontColor;
+                text-align: center;
+                text-decoration: none;
+                border: 0.1rem solid transparent;
+                border-radius: 0.4rem;
+                transition: background-color 0.3s ease;
 
-                .btnViewMore {
-                    flex-basis: 40%;
-                    display: inline-block;
-                    padding: 1rem 2rem;
-                    background-color: #ff4500;
-                    font-size: 1.2rem;
-                    color: $fontColor;
-                    text-align: center;
-                    text-decoration: none;
-                    border: 0.1rem solid transparent;
-                    border-radius: 0.4rem;
-                    transition: background-color 0.3s ease;
+                &:hover {
+                    background-color: darken(#ff4500, 10%); // Assombrir la couleur au survol
                 }
-
-                &:hover{
-                    background-color: #ff4500;;
-                }
-            }
-
-            .detail {
-                display: none;
             }
         }
 
-
-
+    }
+    
+    
+    
+    .detail {
+        display: none;
+    }
 
 }
 
-// * {
-//     border: 0.3rem solid red;
-// }
