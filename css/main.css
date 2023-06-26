@@ -236,7 +236,7 @@ section#about p {
 .cards .btnPrice:hover {
   background-color: #666;
 }
-.cards .btnMore, .cards .btnViewMore {
+.cards .btnMore {
   flex-basis: 40%;
   display: inline-block;
   padding: 1rem 2rem;
@@ -250,6 +250,9 @@ section#about p {
 }
 .cards .btnMore:hover {
   background-color: #666;
+}
+.cards .container-ViewMore {
+  display: none;
 }
 
 /* Contact Section */
@@ -370,8 +373,37 @@ footer {
     display: flex;
     flex-direction: column;
   }
-  section#selection .cards .card {
-    flex-basis: 45%;
+}
+@media screen and (max-width: 425px) {
+  .card {
+    flex-basis: 100%;
+    min-height: 56rem;
+  }
+  .card .container-ViewMore {
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 40%;
+    width: 100%;
+    height: 15rem;
+  }
+  .card .container-ViewMore .btnViewMore {
+    flex-basis: 40%;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ff4500;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: 0.1rem solid transparent;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease;
+  }
+  .card .container-ViewMore:hover {
+    background-color: #ff4500;
+  }
+  .card .detail {
+    display: none;
   }
 }
 

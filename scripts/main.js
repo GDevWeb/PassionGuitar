@@ -37,23 +37,19 @@ function displayProducts(products) {
     ref.textContent = `Référence: ${product.ref}`;
     cardContent.appendChild(ref);
 
-    const viewMore = document.createElement("button");
-    viewMore.type = "button";
-    viewMore.textContent = "ViewMore";
-    viewMore.classList.add("btnViewMore")
-    cardContent.appendChild(viewMore);
-
-
+    
+    
     const description = document.createElement("p");
     description.classList.add("detail")
     description.textContent = product.description;
     cardContent.appendChild(title);
     cardContent.appendChild(description);
     card.appendChild(cardContent);
-
+    
+    
     const btnMoreContainer = document.createElement("div");
     btnMoreContainer.classList.add("btnMore-container");
-
+    
     const btnCat = document.createElement("a");
     btnCat.href = "#";
     btnCat.classList.add("btnMore");
@@ -64,13 +60,23 @@ function displayProducts(products) {
     btnCat.style.backgroundColor = product.backgroundButton;
     btnMoreContainer.appendChild(btnCat);
     card.appendChild(btnMoreContainer);
-
+    
     const btnPrice = document.createElement("a");
-    btnPrice.href = "#";
+    btnPrice.href = "#contact";
     btnPrice.classList.add("btnPrice");
     btnPrice.textContent = `${product.price}€`;
     btnMoreContainer.appendChild(btnPrice);
     card.appendChild(btnMoreContainer);
+    
+    const btnViewMoreContainer = document.createElement("div");
+    btnViewMoreContainer.classList.add("container-ViewMore");
+    card.appendChild(btnViewMoreContainer);
+    
+    const viewMore = document.createElement("button");
+    viewMore.type = "button";
+    viewMore.textContent = ("En savoir plus");
+    viewMore.classList.add("btnViewMore")
+    btnViewMoreContainer.appendChild(viewMore)
 
     selectionContainer.appendChild(card);
   });
@@ -89,3 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
   btnShowFilter.addEventListener("click", () => {
     filter.classList.toggle("showFilter");
   });
+
+  const btnViewMore = document.querySelectorAll(".btnViewMore");
+  btnViewMore.forEach(btnVM => {
+    btnVM.addEventListener("click", (e) => {
+      btnVM.style.backgroundColor = "orange"
+      alert("click")
+    })
+  })
