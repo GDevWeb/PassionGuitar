@@ -132,7 +132,6 @@ section#about p {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
-  background-color: orange;
 }
 #selection .filter-container .filter button.btnFilter {
   flex-basis: 20%;
@@ -237,7 +236,7 @@ section#about p {
 .cards .btnPrice:hover {
   background-color: #666;
 }
-.cards .btnMore {
+.cards .btnMore, .cards .btnViewMore {
   flex-basis: 40%;
   display: inline-block;
   padding: 1rem 2rem;
@@ -278,7 +277,7 @@ section#about p {
 .contact-form .form-group input,
 .contact-form .form-group select,
 .contact-form .form-group textarea {
-  width: 50%;
+  width: 80%;
   margin: auto;
   padding: 1rem;
   font-size: 1.6rem;

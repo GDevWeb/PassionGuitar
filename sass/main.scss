@@ -104,7 +104,7 @@ section#about {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 0.5rem;
-            background-color: orange;
+            // background-color: orange;
 
             button.btnFilter {
                 flex-basis: 20%;
@@ -238,7 +238,7 @@ section#about {
 
     }
 
-    .btnMore {
+    .btnMore, .btnViewMore {
         flex-basis: 40%;
         display: inline-block;
         padding: 1rem 2rem;
@@ -283,7 +283,7 @@ section#about {
         input,
         select,
         textarea {
-            width: 50%;
+            width: 80%;
             margin: auto;
             padding: 1rem;
             font-size: 1.6rem;
@@ -314,7 +314,6 @@ section#about {
         }
     }
 }
-
 // end form 
 
 /* Back to Top Button */
@@ -395,6 +394,10 @@ section#selection .cards{
     .card{
         flex-basis: 45%;
     }
+
+    // .detail{
+    //     display: none;
+    // }
 }
     // .truncate {
     //   white-space: nowrap;

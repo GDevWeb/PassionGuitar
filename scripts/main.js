@@ -37,7 +37,15 @@ function displayProducts(products) {
     ref.textContent = `Référence: ${product.ref}`;
     cardContent.appendChild(ref);
 
+    const viewMore = document.createElement("button");
+    viewMore.type = "button";
+    viewMore.textContent = "ViewMore";
+    viewMore.classList.add("btnViewMore")
+    cardContent.appendChild(viewMore);
+
+
     const description = document.createElement("p");
+    description.classList.add("detail")
     description.textContent = product.description;
     cardContent.appendChild(title);
     cardContent.appendChild(description);
