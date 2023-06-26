@@ -79,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnShowFilter = document.querySelector(".btnShowFilter");
   
   btnShowFilter.addEventListener("click", () => {
-    alert("click")
     filter.classList.toggle("showFilter");
   });
 
