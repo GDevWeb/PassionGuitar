@@ -17,7 +17,6 @@ body {
 
 .container {
   max-width: 120rem;
-  min-width: 45rem;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -133,6 +132,7 @@ section#about p {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 0.5rem;
+  background-color: orange;
 }
 #selection .filter-container .filter button.btnFilter {
   flex-basis: 20%;
@@ -259,45 +259,48 @@ section#about p {
 }
 
 .contact-form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
 }
-
-.form-group {
+.contact-form .form-group {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
-
-.form-group label {
+.contact-form .form-group label {
+  text-align: center;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
-
-.form-group input,
-.form-group select,
-.form-group textarea {
+.contact-form .form-group input,
+.contact-form .form-group select,
+.contact-form .form-group textarea {
+  width: 50%;
+  margin: auto;
   padding: 1rem;
   font-size: 1.6rem;
   border-radius: 0.4rem;
   border: 0.1rem solid #ccc;
 }
-
-.form-group textarea {
+.contact-form .form-group textarea {
   resize: vertical;
   resize: none;
 }
-
 .contact-form .btn {
+  flex: 0 0 20%;
   display: inline-block;
-  padding: 1rem 2rem;
+  width: 20%;
+  margin: auto;
+  padding: 1rem;
   background-color: #333;
   color: #fff;
   text-decoration: none;
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
 }
-
 .contact-form .btn:hover {
   background-color: #666;
 }
@@ -361,20 +364,15 @@ footer {
     width: 100%;
     margin-bottom: 1rem;
   }
-  .truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
+  .cards {
+    flex-direction: column;
   }
-  .truncate .btnMore-container {
-    justify-content: space-evenly;
+  section#selection .cards {
+    display: flex;
+    flex-direction: column;
   }
-  .truncate .btnMore-container .btnMore {
-    width: 45%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  section#selection .cards .card {
+    flex-basis: 45%;
   }
 }
 
