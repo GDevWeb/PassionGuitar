@@ -105,12 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
     allbtnViewMore.forEach(btnVM => {
       btnVM.addEventListener("click", (e) => {
   
-        detailProduct.classList.toggle("toggleDetail")
+        detailProduct.classList.toggle("detail")
   
   
       });
     });
   });
   
-
   

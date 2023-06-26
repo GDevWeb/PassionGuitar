@@ -468,12 +468,18 @@ footer {
         }
 
     }
-    
-    
-    
+
+
+
     .detail {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
         display: none;
     }
-
+    
+    .detail.show {
+        display: block;
+        opacity: 1;
+    }
+    
 }
-
