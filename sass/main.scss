@@ -399,40 +399,6 @@ footer {
         display: flex;
         flex-direction: column;
 
-        // .card {
-        //     flex-basis: 100%;
-        //     min-height: 56rem;
-
-        //     .container-ViewMore {
-        //         display: flex;
-        //         justify-content: flex-end;
-        //         flex-basis: 40%;
-        //         width: 100%;
-        //         height: 15rem;
-
-        //         .btnViewMore {
-        //             flex-basis: 40%;
-        //             display: inline-block;
-        //             padding: 1rem 2rem;
-        //             background-color: #ff4500;
-        //             font-size: 1.2rem;
-        //             color: $fontColor;
-        //             text-align: center;
-        //             text-decoration: none;
-        //             border: 0.1rem solid transparent;
-        //             border-radius: 0.4rem;
-        //             transition: background-color 0.3s ease;
-        //         }
-
-        //         &:hover{
-        //             background-color: #ff4500;;
-        //         }
-        //     }
-
-        //     .detail {
-        //         display: none;
-        //     }
-        // }
     }
 }
 
@@ -462,24 +428,43 @@ footer {
                 transition: background-color 0.3s ease;
 
                 &:hover {
-                    background-color: darken(#ff4500, 10%); // Assombrir la couleur au survol
+                    background-color: darken(#ff4500, 10%); 
                 }
             }
         }
 
     }
 
-
-
+    // selection card effects : 
     .detail {
         opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-        display: none;
+        height: 0;
+        transition: opacity 0.5s ease-in-out, height 0.2s ease-in-out;
+        overflow: hidden;
     }
-    
+
     .detail.show {
-        display: block;
         opacity: 1;
+        height: auto;
     }
+
+}
+
+@media screen and (max-width: 375px){
+
+    // body{
+    //     background-color: pink;
+    // }
+
+    #selection .filter-container{
+        display: inline-flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    // .container-ViewMore{
+    //     background-color: blue;
+    //     flex-basis: 100%;
+
+    // }
     
 }

@@ -6,17 +6,17 @@ btnFilter.forEach((button) =>
   button.addEventListener("click", (e) => {
     const category = e.target.value;
     if (category === "all") {
-      displayProducts(productsTab); 
+      displayProducts(productsTab);
     } else {
       const filteredByCat = productsTab.filter((product) => product.cat === category);
-      displayProducts(filteredByCat); 
+      displayProducts(filteredByCat);
     }
   })
 );
 
 function displayProducts(products) {
   const selectionContainer = document.querySelector("#selection .cards");
-  selectionContainer.innerHTML = ""; 
+  selectionContainer.innerHTML = "";
 
   products.forEach((product) => {
     const card = document.createElement("div");
@@ -37,19 +37,16 @@ function displayProducts(products) {
     ref.textContent = `Référence: ${product.ref}`;
     cardContent.appendChild(ref);
 
-    
-    
     const description = document.createElement("p");
-    description.classList.add("detail")
+    description.classList.add("detail");
     description.textContent = product.description;
     cardContent.appendChild(title);
     cardContent.appendChild(description);
     card.appendChild(cardContent);
-    
-    
+
     const btnMoreContainer = document.createElement("div");
     btnMoreContainer.classList.add("btnMore-container");
-    
+
     const btnCat = document.createElement("a");
     btnCat.href = "#";
     btnCat.classList.add("btnMore");
@@ -60,56 +57,48 @@ function displayProducts(products) {
     btnCat.style.backgroundColor = product.backgroundButton;
     btnMoreContainer.appendChild(btnCat);
     card.appendChild(btnMoreContainer);
-    
+
     const btnPrice = document.createElement("a");
     btnPrice.href = "#contact";
     btnPrice.classList.add("btnPrice");
     btnPrice.textContent = `${product.price}€`;
     btnMoreContainer.appendChild(btnPrice);
     card.appendChild(btnMoreContainer);
-    
+
     const btnViewMoreContainer = document.createElement("div");
     btnViewMoreContainer.classList.add("container-ViewMore");
     card.appendChild(btnViewMoreContainer);
-    
+
     const viewMore = document.createElement("button");
     viewMore.type = "button";
-    viewMore.textContent = ("En savoir plus");
-    viewMore.classList.add("btnViewMore")
-    btnViewMoreContainer.appendChild(viewMore)
+    const viewMoreId = `btn_${Date.now()}`;
+    viewMore.setAttribute("id", viewMoreId);
+    viewMore.textContent = "En savoir plus";
+    viewMore.classList.add("btnViewMore");
+    viewMore.addEventListener("click", handleClick);
+    btnViewMoreContainer.appendChild(viewMore);
 
     selectionContainer.appendChild(card);
   });
 }
 
+function handleClick(event) {
+  const detailProduct = event.target.parentNode.parentNode.querySelector("p.detail");
+  if (detailProduct.classList.contains("show")) {
+    detailProduct.classList.remove("show");
+  } else {
+    detailProduct.classList.add("show");
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const selectionContainer = document.querySelector("#selection .cards");
+  const filter = document.querySelector(".filter");
+  const btnShowFilter = document.querySelector(".btnShowFilter");
 
-  displayProducts(productsTab); 
+  displayProducts(productsTab);
 
-  // Toggle Filter : 
-    const filter = document.querySelector(".filter");
-    const btnShowFilter = document.querySelector(".btnShowFilter");
-    
-    btnShowFilter.addEventListener("click", () => {
-      filter.classList.toggle("showFilter");
-    });
-
-    // toggle detail products :
-    const allbtnViewMore = document.querySelectorAll("button.btnViewMore");
-    console.log(allbtnViewMore); 
-    const detailProduct = document.querySelector("p.detail");
-    console.log(detailProduct);
-    
-    
-    allbtnViewMore.forEach(btnVM => {
-      btnVM.addEventListener("click", (e) => {
-  
-        detailProduct.classList.toggle("detail")
-  
-  
-      });
-    });
+  btnShowFilter.addEventListener("click", () => {
+    filter.classList.toggle("showFilter");
   });
-  
-  
+});
