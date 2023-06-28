@@ -109,7 +109,7 @@ section#about {
             button.btnFilter {
                 flex-basis: 20%;
                 display: inline-block;
-                padding: 1.2rem;
+                padding: 1rem;
                 margin: 0.2rem;
                 background-color: $primaryColor;
                 font-size: 1rem;
@@ -118,6 +118,7 @@ section#about {
                 text-align: center;
                 text-decoration: none;
                 border-radius: 0.4rem;
+                border: 0.3rem solid transparent;
                 transition: background-color 0.3s ease;
 
                 &:hover {
@@ -301,10 +302,9 @@ section#about {
         }
     }
 
-    .btn {
-        flex: 0 0 20%;
+    .btn-form {
         display: inline-block;
-        width: 20%;
+        width: fit-content;
         margin: auto;
         padding: 1rem;
         background-color: $primaryColor;
@@ -417,7 +417,8 @@ footer {
             .btnViewMore {
                 flex-basis: 40%;
                 display: inline-block;
-                padding: 1rem 2rem;
+                padding: 1rem;
+                margin-right: 0.25rem;
                 background-color: #ff4500;
                 font-size: 1.2rem;
                 color: $fontColor;
@@ -461,10 +462,5 @@ footer {
         flex-wrap: wrap-reverse;
     }
 
-    // .container-ViewMore{
-    //     background-color: blue;
-    //     flex-basis: 100%;
-
-    // }
     
 }
