@@ -116,6 +116,9 @@ section#about p {
 }
 
 /* Selection Section */
+#selection {
+  /* Toggle Filters */
+}
 #selection .filter-container {
   display: flex;
   align-items: center;
@@ -138,18 +141,14 @@ section#about p {
   display: inline-block;
   padding: 1.2rem;
   margin: 0.2rem;
-  background-color: #333;
   font-size: 1rem;
   font-weight: bold;
-  color: #fff;
   text-align: center;
+  color: #fff;
   text-decoration: none;
   border: none;
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
-}
-#selection .filter-container .filter button.btnFilter:hover {
-  background-color: #666;
 }
 #selection .filter-container .filter .btnFilter.all {
   background-color: green;
@@ -222,21 +221,7 @@ section#about p {
   flex-basis: 5%;
   margin: 0.3rem;
 }
-.cards .btnPrice {
-  flex-basis: 40%;
-  display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #333;
-  font-size: 1.2rem;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0.4rem;
-  transition: background-color 0.3s ease;
-}
-.cards .btnPrice:hover {
-  background-color: #666;
-}
+.cards .btnPrice,
 .cards .btnMore {
   flex-basis: 40%;
   display: inline-block;
@@ -334,6 +319,7 @@ section#about p {
   color: orange;
 }
 
+/* Footer */
 footer {
   background-color: #333;
   color: #fff;
@@ -379,6 +365,9 @@ footer {
   section#selection .card {
     flex-basis: 100%;
     min-height: 55rem;
+  }
+  section#selection .card .card {
+    flex-basis: auto;
   }
   section#selection .card .container-ViewMore {
     display: flex;

@@ -4,458 +4,415 @@
 
 /* Navigation */
 nav {
-    background-color: $primaryColor;
-    padding: 1rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  background-color: $primaryColor;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .liste {
-    margin: auto;
-    list-style-type: none;
-    display: flex;
+  margin: auto;
+  list-style-type: none;
+  display: flex;
 }
 
 .items {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .items a {
-    text-decoration: none;
-    font-size: 2rem;
-    color: $fontColor;
-    padding: 0.5rem;
+  text-decoration: none;
+  font-size: 2rem;
+  color: $fontColor;
+  padding: 0.5rem;
 }
 
 .items a:hover {
-    transition: all 0.2s ease-in-out;
-    color: #ffa500;
+  transition: all 0.2s ease-in-out;
+  color: #ffa500;
 }
 
 .btn-responsive {
-    display: none;
-    background-color: transparent;
-    border: none;
-    color: $fontColor;
-    cursor: pointer;
-    font-size: 2rem;
+  display: none;
+  background-color: transparent;
+  border: none;
+  color: $fontColor;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
 /* Hero Banner */
 #heroBanner {
-    position: relative;
+  position: relative;
 }
 
 #heroBanner figure {
-    position: relative;
-    height: 40rem;
-    overflow: hidden;
+  position: relative;
+  height: 40rem;
+  overflow: hidden;
 }
 
 #heroBanner video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #heroBanner h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: $fontColor;
-    font-size: 4rem;
-    text-align: center;
-    text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $fontColor;
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
 }
 
 /* About Section */
 section#about {
-    margin: 5rem 0;
+  margin: 5rem 0;
 
-    p {
-        font-size: 1.4rem;
-        text-align: justify;
-    }
-
+  p {
+    font-size: 1.4rem;
+    text-align: justify;
+  }
 }
 
 /* Selection Section */
 #selection {
+  .filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-    .filter-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        p {
-            flex-basis: 10%;
-            font-size: 2rem;
-            color: $primaryColor;
-            text-align: right;
-        }
-
-        .filter {
-            flex-basis: 60%;
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 0.5rem;
-
-            button.btnFilter {
-                flex-basis: 20%;
-                display: inline-block;
-                padding: 1.2rem;
-                margin: 0.2rem;
-                background-color: $primaryColor;
-                font-size: 1rem;
-                font-weight: bold;
-                color: $fontColor;
-                text-align: center;
-                text-decoration: none;
-                border: none;
-                border-radius: 0.4rem;
-                transition: background-color 0.3s ease;
-
-                &:hover {
-                    background-color: $secondaryColor;
-                }
-
-            }
-
-            .btnFilter.all {
-                background-color: green;
-            }
-
-            .btnFilter.electric {
-                background-color: #FF0000;
-            }
-
-            .btnFilter.electro_accoustic {
-                background-color: #4682B4;
-            }
-
-            .btnFilter.classique {
-                background-color: #964B00;
-            }
-
-
-        }
-
-
-        .btnShowFilter {
-            flex-basis: 10%;
-            border: 0.1rem solid transparent;
-            padding: 0.1rem;
-            font-size: 2rem;
-            cursor: pointer;
-        }
+    p {
+      flex-basis: 10%;
+      font-size: 2rem;
+      color: $primaryColor;
+      text-align: right;
     }
 
-    // Toggle Filters : 
-    .showFilter {
-        visibility: hidden;
+    .filter {
+      flex-basis: 60%;
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0.5rem;
+
+      button.btnFilter {
+        flex-basis: 20%;
+        display: inline-block;
+        padding: 1.2rem;
+        margin: 0.2rem;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        color: $fontColor;
+        text-decoration: none;
+        border: none;
+        border-radius: 0.4rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .btnFilter.all {
+        background-color: green;
+      }
+
+      .btnFilter.electric {
+        background-color: #FF0000;
+      }
+
+      .btnFilter.electro_accoustic {
+        background-color: #4682B4;
+      }
+
+      .btnFilter.classique {
+        background-color: #964B00;
+      }
     }
+
+    .btnShowFilter {
+      flex-basis: 10%;
+      border: 0.1rem solid transparent;
+      padding: 0.1rem;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+  }
+
+  /* Toggle Filters */
+  .showFilter {
+    visibility: hidden;
+  }
 }
 
-
 .cards {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  .card {
+    flex-basis: 33%;
     display: flex;
-    justify-content: space-evenly;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: $fontColor;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 
-    .card {
-        flex-basis: 33%;
-        display: flex;
-        flex-direction: column;
-        background-color: $fontColor;
-        border-radius: 0.4rem;
-        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
-        overflow: hidden;
+    figure {
+      flex-basis: 40%;
 
-        figure {
-            flex-basis: 40%;
-
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-            }
-        }
-
-        .card-content {
-            flex-basis: 70%;
-            padding: 1.5rem;
-
-            h3 {
-                flex-basis: 10%;
-                font-size: 2.4rem;
-                margin-bottom: 1rem;
-                text-align: center;
-            }
-
-            h4 {
-                text-align: center;
-            }
-
-            p {
-                font-size: 1.6rem;
-                margin-bottom: 1.5rem;
-            }
-
-        }
-
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
     }
 
-    .btnMore-container {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: flex-end;
-        justify-content: space-between;
-        flex-basis: 5%;
-        margin: 0.3rem;
-    }
+    .card-content {
+      flex-basis: 70%;
+      padding: 1.5rem;
 
-    .btnPrice {
-        flex-basis: 40%;
-        display: inline-block;
-        padding: 1rem 2rem;
-        background-color: $primaryColor;
-        font-size: 1.2rem;
-        color: $fontColor;
+      h3 {
+        flex-basis: 10%;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
         text-align: center;
-        text-decoration: none;
-        border-radius: 0.4rem;
-        transition: background-color 0.3s ease;
+      }
 
-        &:hover {
-            background-color: $secondaryColor;
-        }
-
-    }
-
-    .btnMore {
-        flex-basis: 40%;
-        display: inline-block;
-        padding: 1rem 2rem;
-        background-color: $primaryColor;
-        font-size: 1.2rem;
-        color: $fontColor;
+      h4 {
         text-align: center;
-        text-decoration: none;
-        border-radius: 0.4rem;
-        transition: background-color 0.3s ease;
-    }
+      }
 
-    .btnMore:hover {
-        background-color: $secondaryColor;
+      p {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+      }
     }
+  }
 
-    .container-ViewMore {
-        display: none;
-    }
+  .btnMore-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-basis: 5%;
+    margin: 0.3rem;
+  }
+
+  .btnPrice,
+  .btnMore {
+    flex-basis: 40%;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: $primaryColor;
+    font-size: 1.2rem;
+    color: $fontColor;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .btnMore:hover {
+    background-color: $secondaryColor;
+  }
+
+  .container-ViewMore {
+    display: none;
+  }
 }
 
 /* Contact Section */
 #contact {
-    margin: 4rem 0;
+  margin: 4rem 0;
 }
 
-// in flex : 
 .contact-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+
+  .form-group {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
 
-    .form-group {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-
-        label {
-            text-align: center;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 80%;
-            margin: auto;
-            padding: 1rem;
-            font-size: 1.6rem;
-            border-radius: 0.4rem;
-            border: 0.1rem solid #ccc;
-        }
-
-        textarea {
-            resize: vertical;
-            resize: none;
-        }
+    label {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
     }
 
-    .btn {
-        flex: 0 0 20%;
+    input,
+    select,
+    textarea {
+      width: 80%;
+      margin: auto;
+      padding: 1rem;
+      font-size: 1.6rem;
+      border-radius: 0.4rem;
+      border: 0.1rem solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+      resize: none;
+    }
+  }
+
+  .btn {
+    flex: 0 0 20%;
+    display: inline-block;
+    width: 20%;
+    margin: auto;
+    padding: 1rem;
+    background-color: $primaryColor;
+    color: $fontColor;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $secondaryColor;
+    }
+  }
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 12rem;
+  right: 2rem;
+  background-color: #333;
+  color: $fontColor;
+  border: none;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2.4rem;
+  cursor: pointer;
+  display: none;
+}
+
+.back-to-top-btn.show {
+  display: block;
+}
+
+.back-to-top-btn:hover {
+  transition: all 0.2s ease-in-out;
+  background-color: $secondaryColor;
+  color: orange;
+}
+
+/* Footer */
+footer {
+  background-color: $primaryColor;
+  color: $fontColor;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-responsive {
+    display: block;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .liste {
+    display: none;
+  }
+
+  .liste.show {
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .items {
+      border-bottom: 0.1rem solid $secondaryColor;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  section#selection .cards {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section#selection .card {
+    flex-basis: 100%;
+    min-height: 55rem;
+
+    .card{
+        flex-basis: auto;
+    }
+    .container-ViewMore {
+      display: flex;
+      justify-content: flex-end;
+      flex-basis: 40%;
+      width: 100%;
+      height: 15rem;
+
+      .btnViewMore {
+        flex-basis: 40%;
         display: inline-block;
-        width: 20%;
-        margin: auto;
-        padding: 1rem;
-        background-color: $primaryColor;
+        padding: 1rem 2rem;
+        background-color: #ff4500;
+        font-size: 1.2rem;
         color: $fontColor;
+        text-align: center;
         text-decoration: none;
+        border: 0.1rem solid transparent;
         border-radius: 0.4rem;
         transition: background-color 0.3s ease;
 
         &:hover {
-            background-color: $secondaryColor;
+          background-color: darken(#ff4500, 10%);
         }
+      }
     }
+  }
+
+  .detail {
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.5s ease-in-out, height 0.2s ease-in-out;
+    overflow: hidden;
+  }
+
+  .detail.show {
+    opacity: 1;
+    height: auto;
+  }
 }
 
-// end form 
-
-/* Back to Top Button */
-.back-to-top-btn {
-    position: fixed;
-    bottom: 12rem;
-    right: 2rem;
-    background-color: #333;
-    color: $fontColor;
-    border: none;
-    border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
-    font-size: 2.4rem;
-    cursor: pointer;
-    display: none;
-}
-
-.back-to-top-btn.show {
-
-    display: block;
-}
-
-.back-to-top-btn:hover {
-    transition: all 0.2s ease-in-out;
-    background-color: $secondaryColor;
-    color: orange;
-}
-
-// /* Footer */
-footer {
-    background-color: $primaryColor;
-    color: $fontColor;
-    padding: 2rem;
-    text-align: center;
-}
-
-
-@media screen and (max-width: 768px) {
-    .btn-responsive {
-        display: block;
-    }
-
-    nav {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .liste {
-        display: none;
-    }
-
-    .liste.show {
-        display: flex;
-        flex-basis: 50%;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        .items {
-            border-bottom: 0.1rem solid $secondaryColor;
-            width: 100%;
-            margin-bottom: 1rem;
-        }
-    }
-
-    .cards {
-        flex-direction: column;
-
-
-
-    }
-
-    section#selection .cards {
-        display: flex;
-        flex-direction: column;
-
-    }
-}
-
-@media screen and (max-width: 425px) {
-    section#selection .card {
-        flex-basis: 100%;
-        min-height: 55rem;
-
-        .container-ViewMore {
-            display: flex;
-            justify-content: flex-end;
-            flex-basis: 40%;
-            width: 100%;
-            height: 15rem;
-
-            .btnViewMore {
-                flex-basis: 40%;
-                display: inline-block;
-                padding: 1rem 2rem;
-                background-color: #ff4500;
-                font-size: 1.2rem;
-                color: $fontColor;
-                text-align: center;
-                text-decoration: none;
-                border: 0.1rem solid transparent;
-                border-radius: 0.4rem;
-                transition: background-color 0.3s ease;
-
-                &:hover {
-                    background-color: darken(#ff4500, 10%); 
-                }
-            }
-        }
-
-    }
-
-    // selection card effects : 
-    .detail {
-        opacity: 0;
-        height: 0;
-        transition: opacity 0.5s ease-in-out, height 0.2s ease-in-out;
-        overflow: hidden;
-    }
-
-    .detail.show {
-        opacity: 1;
-        height: auto;
-    }
-
-}
-
-@media screen and (max-width: 375px){
-
-    #selection .filter-container{
-        display: inline-flex;
-        flex-wrap: wrap-reverse;
-    }
-
-    
+@media screen and (max-width: 375px) {
+  #selection .filter-container {
+    display: inline-flex;
+    flex-wrap: wrap-reverse;
+  }
 }
