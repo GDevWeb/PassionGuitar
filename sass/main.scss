@@ -103,20 +103,25 @@ section#about {
       justify-content: flex-end;
       margin-bottom: 0.5rem;
 
-      button.btnFilter {
-        flex-basis: 20%;
-        display: inline-block;
-        padding: 1.2rem;
-        margin: 0.2rem;
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-        color: $fontColor;
-        text-decoration: none;
-        border: none;
-        border-radius: 0.4rem;
-        transition: background-color 0.3s ease;
-      }
+            button.btnFilter {
+                flex-basis: 20%;
+                display: inline-block;
+                padding: 1.2rem;
+                margin: 0.2rem;
+                background-color: $primaryColor;
+                font-size: 1rem;
+                font-weight: bold;
+                color: $fontColor;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 0.4rem;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $secondaryColor;
+                }
+
+            }
 
       .btnFilter.all {
         background-color: green;
@@ -269,17 +274,17 @@ section#about {
     }
   }
 
-  .btn {
-    flex: 0 0 20%;
-    display: inline-block;
-    width: 20%;
-    margin: auto;
-    padding: 1rem;
-    background-color: $primaryColor;
-    color: $fontColor;
-    text-decoration: none;
-    border-radius: 0.4rem;
-    transition: background-color 0.3s ease;
+    .btn {
+        flex: 0 0 20%;
+        display: inline-block;
+        width: 20%;
+        margin: auto;
+        padding: 1rem;
+        background-color: $primaryColor;
+        color: $fontColor;
+        text-decoration: none;
+        border-radius: 0.4rem;
+        transition: background-color 0.3s ease;
 
     &:hover {
       background-color: $secondaryColor;
@@ -377,18 +382,18 @@ footer {
       width: 100%;
       height: 15rem;
 
-      .btnViewMore {
-        flex-basis: 40%;
-        display: inline-block;
-        padding: 1rem 2rem;
-        background-color: #ff4500;
-        font-size: 1.2rem;
-        color: $fontColor;
-        text-align: center;
-        text-decoration: none;
-        border: 0.1rem solid transparent;
-        border-radius: 0.4rem;
-        transition: background-color 0.3s ease;
+            .btnViewMore {
+                flex-basis: 40%;
+                display: inline-block;
+                padding: 1rem 2rem;
+                background-color: #ff4500;
+                font-size: 1.2rem;
+                color: $fontColor;
+                text-align: center;
+                text-decoration: none;
+                border: 0.1rem solid transparent;
+                border-radius: 0.4rem;
+                transition: background-color 0.3s ease;
 
         &:hover {
           background-color: darken(#ff4500, 10%);
@@ -410,9 +415,21 @@ footer {
   }
 }
 
-@media screen and (max-width: 375px) {
-  #selection .filter-container {
-    display: inline-flex;
-    flex-wrap: wrap-reverse;
-  }
+@media screen and (max-width: 375px){
+
+    // body{
+    //     background-color: pink;
+    // }
+
+    #selection .filter-container{
+        display: inline-flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    // .container-ViewMore{
+    //     background-color: blue;
+    //     flex-basis: 100%;
+
+    // }
+    
 }

@@ -139,7 +139,7 @@ section#about p {
 #selection .filter-container .filter button.btnFilter {
   flex-basis: 20%;
   display: inline-block;
-  padding: 1.2rem;
+  padding: 1rem;
   margin: 0.2rem;
   font-size: 1rem;
   font-weight: bold;
@@ -148,6 +148,7 @@ section#about p {
   text-decoration: none;
   border: none;
   border-radius: 0.4rem;
+  border: 0.3rem solid transparent;
   transition: background-color 0.3s ease;
 }
 #selection .filter-container .filter .btnFilter.all {
@@ -277,10 +278,9 @@ section#about p {
   resize: vertical;
   resize: none;
 }
-.contact-form .btn {
-  flex: 0 0 20%;
+.contact-form .btn-form {
   display: inline-block;
-  width: 20%;
+  width: fit-content;
   margin: auto;
   padding: 1rem;
   background-color: #333;
@@ -289,7 +289,7 @@ section#about p {
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
 }
-.contact-form .btn:hover {
+.contact-form .btn-form:hover {
   background-color: #666;
 }
 
@@ -379,7 +379,8 @@ footer {
   section#selection .card .container-ViewMore .btnViewMore {
     flex-basis: 40%;
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    margin-right: 0.25rem;
     background-color: #ff4500;
     font-size: 1.2rem;
     color: #fff;
