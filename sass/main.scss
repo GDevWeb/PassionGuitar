@@ -104,7 +104,6 @@ section#about {
             display: flex;
             justify-content: flex-end;
             margin-bottom: 0.5rem;
-            // background-color: orange;
 
             button.btnFilter {
                 flex-basis: 20%;
@@ -117,6 +116,7 @@ section#about {
                 color: $fontColor;
                 text-align: center;
                 text-decoration: none;
+                border: none;
                 border-radius: 0.4rem;
                 transition: background-color 0.3s ease;
 
@@ -324,7 +324,7 @@ section#about {
 /* Back to Top Button */
 .back-to-top-btn {
     position: fixed;
-    bottom: 8rem;
+    bottom: 12rem;
     right: 2rem;
     background-color: #333;
     color: $fontColor;
@@ -452,19 +452,10 @@ footer {
 
 @media screen and (max-width: 375px){
 
-    // body{
-    //     background-color: pink;
-    // }
-
     #selection .filter-container{
         display: inline-flex;
         flex-wrap: wrap-reverse;
     }
 
-    // .container-ViewMore{
-    //     background-color: blue;
-    //     flex-basis: 100%;
-
-    // }
     
 }

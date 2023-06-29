@@ -144,6 +144,7 @@ section#about p {
   color: #fff;
   text-align: center;
   text-decoration: none;
+  border: none;
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
 }
@@ -310,7 +311,7 @@ section#about p {
 /* Back to Top Button */
 .back-to-top-btn {
   position: fixed;
-  bottom: 8rem;
+  bottom: 12rem;
   right: 2rem;
   background-color: #333;
   color: #fff;
