@@ -1,5 +1,5 @@
 <h1 align="center">Salut 👋, Je suis Gaëtan Dammaretz</h1>
-<h3 align="center">Projet personnel - en HTML SASS et Javascript vanilla</h3>
+<h3 align="center">Projet personnel - en HTML SASS et TypeScript</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aescanor&label=Profile%20views&color=0e75b6&style=flat" alt="aescanor" /> </p>
 
