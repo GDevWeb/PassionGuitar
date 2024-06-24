@@ -73,6 +73,15 @@ nav {
   text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
 }
 
+
+// section {
+//   height: 100vh;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: space-evenly;
+// }
+
 /* About Section */
 section#about {
   margin: 5rem 0;
@@ -276,7 +285,7 @@ section#about {
     }
   }
 
-  .btn {
+  .btn-form {
     flex: 0 0 20%;
     display: inline-block;
     width: 20%;
@@ -420,19 +429,10 @@ footer {
 
 @media screen and (max-width: 375px) {
 
-  // body{
-  //     background-color: pink;
-  // }
-
   #selection .filter-container {
     display: inline-flex;
     flex-wrap: wrap-reverse;
   }
 
-  // .container-ViewMore{
-  //     background-color: blue;
-  //     flex-basis: 100%;
-
-  // }
 
 }

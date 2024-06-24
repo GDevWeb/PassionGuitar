@@ -282,7 +282,7 @@ section#about p {
   resize: vertical;
   resize: none;
 }
-.contact-form .btn {
+.contact-form .btn-form {
   flex: 0 0 20%;
   display: inline-block;
   width: 20%;
@@ -294,7 +294,7 @@ section#about p {
   border-radius: 0.4rem;
   transition: background-color 0.3s ease;
 }
-.contact-form .btn:hover {
+.contact-form .btn-form:hover {
   background-color: #666;
 }
 
