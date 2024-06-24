@@ -1,8 +1,8 @@
 import productsTab from "./productsTab.js";
-// Assurez-vous que btnFilter est correctement sélectionné
+
 const btnFilter = document.querySelectorAll(".btnFilter");
 btnFilter.forEach((button) => {
-    console.log("Attaching event to button:", button); // Log pour vérifier si les boutons existent
+    console.log("Attaching event to button:", button); 
     button.addEventListener("click", (e) => {
         console.log("Button clicked");
         const target = e.target;
@@ -10,7 +10,7 @@ btnFilter.forEach((button) => {
             return;
         }
         const category = target.value;
-        console.log("Category:", category); // Log pour vérifier la catégorie
+        console.log("Category:", category);
         if (category === "all") {
             displayProducts(productsTab);
         }
