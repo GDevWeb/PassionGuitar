@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Passion, guitare, cours, tablatures, vente, musique, instruments, concert, événements.">
+    <script type="module" src="/dist/app.js" defer></script>
+    <script  src="./scripts/navbar.js" defer></script>
+    <script src="scripts/btnBackToTop.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="./assets/favicon/icon guitar.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/dist/css/main.css">
     <title>Passion Guitar</title>
 </head>
 
@@ -22,7 +25,7 @@
                 <li class="items"><a href="#selection">Sélection</a></li>
                 <li class="items"><a href="#contact">Contact</a></li>
             </ul>
-            <button class="btn-responsive"><i class="fa-solid fa-bars"></i></button>
+            <button type="button" class="btn-responsive" aria-label="icon hamburger"><i class="fa-solid fa-bars"></i></button>
         </nav>
         <header id="heroBanner">
             <figure>
@@ -215,18 +218,15 @@
             </section>
         </main>
 
-        <button class="back-to-top-btn">
+        <button type="button"  class="back-to-top-btn" aria-label="bouton retour en haut de page">
             <i class="fa-solid fa-chevron-up"></i>
         </button>
 
         <footer>
-           <p> Dammaretz Gaëtan </p><p> Passion Guitare</p> &copy 2023
+            <p class="copyright"><span class="copyright">&copy 2023</span> Dammaretz Gaëtan </p>
+            <p> Passion Guitare</p> 
         </footer>
     </div>
     <!-- end container  -->
 </body>
-<script type="module" src="./scripts/main.js"></script>
-<script  src="./scripts/navbar.js"></script>
-<script src="scripts/btnBackToTop.js"></script>
-
 </html>

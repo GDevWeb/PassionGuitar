@@ -1,5 +1,17 @@
 {
   "dependencies": {
-    "sass": "^1.63.6"
-  }
+    "nodemon": "^3.1.4",
+    "sass": "^1.63.6",
+    "typescript": "^5.5.2"
+  },
+  "name": "passionguitar",
+  "description": "<h1 align=\"center\">Salut 👋, Je suis Gaëtan Dammaretz</h1>\r <h3 align=\"center\">Projet personnel - en HTML SASS et Javascript vanilla</h3>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
