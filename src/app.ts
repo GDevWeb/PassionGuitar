@@ -1,26 +1,55 @@
-import { productsTab } from "./productsTab.js";
+import productsTab from "./productsTab.js";
 
-const btnFilter = document.querySelectorAll(".btnFilter");
+// Interface pour les produits
+interface IProductabs {
+  id: number;
+  make: string;
+  reference: string;
+  img: string;
+  description: string;
+  price: number;
+  category: string;
+  backgroundColorButton: string;
+}
 
-btnFilter.forEach((button) =>
-  button.addEventListener("click", (e) => {
-    const category = e.target.value;
+// Assurez-vous que btnFilter est correctement sélectionné
+const btnFilter = document.querySelectorAll(
+  ".btnFilter"
+) as NodeListOf<HTMLButtonElement>;
+
+btnFilter.forEach((button) => {
+  console.log("Attaching event to button:", button); // Log pour vérifier si les boutons existent
+  button.addEventListener("click", (e: Event) => {
+    console.log("Button clicked");
+
+    const target = e.target as HTMLButtonElement;
+
+    if (!target) {
+      return;
+    }
+
+    const category = target.value;
+    console.log("Category:", category); // Log pour vérifier la catégorie
     if (category === "all") {
       displayProducts(productsTab);
     } else {
       const filteredByCat = productsTab.filter(
-        (product) => product.category === category
+        (product: IProductabs) => product.category === category
       );
       displayProducts(filteredByCat);
     }
-  })
-);
+  });
+});
 
-function displayProducts(products) {
-  const selectionContainer = document.querySelector("#selection .cards");
+function displayProducts(products: IProductabs[]) {
+  const selectionContainer = document.querySelector(
+    "#selection .cards"
+  ) as HTMLElement;
+  if (!selectionContainer) return;
+
   selectionContainer.innerHTML = "";
 
-  products.forEach((product) => {
+  products.forEach((product: IProductabs) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -50,18 +79,15 @@ function displayProducts(products) {
     btnMoreContainer.classList.add("btnMore-container");
 
     const btnCat = document.createElement("a");
-    btnCat.hreference = "#";
+    btnCat.href = "#";
     btnCat.classList.add("btnMore");
     btnCat.textContent = product.category;
-    btnCat.alt = product.category;
-    btnCat.ariaLabel = product.category;
-    btnCat.title = product.category;
     btnCat.style.backgroundColor = product.backgroundColorButton;
     btnMoreContainer.appendChild(btnCat);
     card.appendChild(btnMoreContainer);
 
     const btnPrice = document.createElement("a");
-    btnPrice.hreference = "#contact";
+    btnPrice.href = "#contact";
     btnPrice.classList.add("btnPrice");
     btnPrice.textContent = `${product.price}€`;
     btnMoreContainer.appendChild(btnPrice);
@@ -84,24 +110,23 @@ function displayProducts(products) {
   });
 }
 
-function handleClick(event) {
-  const detailProduct =
-    event.target.parentNode.parentNode.querySelector("p.detail");
-  if (detailProduct.classList.contains("show")) {
-    detailProduct.classList.remove("show");
-  } else {
-    detailProduct.classList.add("show");
-  }
+function handleClick(event: Event) {
+  const target = event.target as HTMLButtonElement;
+  if (!target) return;
+
+  const detailProduct = target.closest(".card")?.querySelector("p.detail");
+  if (!detailProduct) return;
+
+  detailProduct.classList.toggle("show");
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const selectionContainer = document.querySelector("#selection .cards");
   const filter = document.querySelector(".filter");
   const btnShowFilter = document.querySelector(".btnShowFilter");
 
   displayProducts(productsTab);
 
-  btnShowFilter.addEventListener("click", () => {
-    filter.classList.toggle("showFilter");
+  btnShowFilter?.addEventListener("click", () => {
+    filter?.classList.toggle("showFilter");
   });
 });

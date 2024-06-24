@@ -78,4 +78,4 @@ const productsTab: IProductabs[] = [
   },
 ];
 
-export { productsTab };
+export default productsTab;

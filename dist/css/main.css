@@ -149,6 +149,7 @@ section#about p {
   text-align: center;
   text-decoration: none;
   border-radius: 0.4rem;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 #selection .filter-container .filter button.btnFilter:hover {
