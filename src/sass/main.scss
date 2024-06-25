@@ -1,56 +1,59 @@
-@import './reset.scss';
-@import './preset.scss';
-@import './colors.scss';
+@import 'reset.scss';
+@import 'mixins';
+@import 'colors.scss';
 
 /* Navigation */
 nav {
-  background-color: $primaryColor;
-  padding: 1rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border-radius: $default-border-radius;
+  margin-bottom: $default-margin;
+  padding: $default-padding;
+  background-color: $primaryColor;
+
+  .liste {
+    display: flex;
+    margin: auto;
+    padding: $default-padding;
+    list-style-type: none;
+  }
+
+  .items a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: $fontColor;
+    padding: 0.5rem;
+  }
+
+  .items a:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ffa500;
+  }
+
+  .btn-responsive {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: $fontColor;
+    cursor: pointer;
+    font-size: 2rem;
+  }
 }
 
-.liste {
-  margin: auto;
-  list-style-type: none;
-  display: flex;
-}
-
-.items {
-  margin-right: 1rem;
-}
-
-.items a {
-  text-decoration: none;
-  font-size: 2rem;
-  color: $fontColor;
-  padding: 0.5rem;
-}
-
-.items a:hover {
-  transition: all 0.2s ease-in-out;
-  color: #ffa500;
-}
-
-.btn-responsive {
-  display: none;
-  background-color: transparent;
-  border: none;
-  color: $fontColor;
-  cursor: pointer;
-  font-size: 2rem;
-}
+// end navigation
 
 /* Hero Banner */
 #heroBanner {
   position: relative;
+  border-radius: $default-border-radius;
 }
 
 #heroBanner figure {
   position: relative;
   height: 40rem;
   overflow: hidden;
+  border-radius: $default-border-radius;
 }
 
 #heroBanner video {
@@ -73,22 +76,12 @@ nav {
   text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
 }
 
-
-// section {
-//   height: 100vh;
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: space-evenly;
-// }
-
 /* About Section */
 section#about {
   margin: 5rem 0;
 
   p {
-    font-size: 1.4rem;
-    text-align: justify;
+    font-size: 1.8rem;
   }
 }
 

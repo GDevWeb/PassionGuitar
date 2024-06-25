@@ -1,0 +1,56 @@
+@import 'mixins';
+@import 'colors';
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: $max-width-screen;
+  min-width: $min-width-screen;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: $backgroundColor-primary;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: $default-padding;
+}
+
+// fonts 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 2rem;
+  text-align: center;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+  margin: $marge-reference;
+}
+
+/* end fonts :*/
+section {
+  padding: $default-padding;
+  margin-bottom: 50vh;
+  text-align: justify;
+}
+
+.filter.show {
+  visibility: hidden;
+}
