@@ -2,7 +2,6 @@ import productsTab from "./productsTab.js";
 // Assurez-vous que btnFilter est correctement sélectionné
 const btnFilter = document.querySelectorAll(".btnFilter");
 btnFilter.forEach((button) => {
-    console.log("Attaching event to button:", button); // Log pour vérifier si les boutons existent
     button.addEventListener("click", (e) => {
         console.log("Button clicked");
         const target = e.target;
@@ -88,8 +87,17 @@ function handleClick(event) {
 document.addEventListener("DOMContentLoaded", () => {
     const filter = document.querySelector(".filter");
     const btnShowFilter = document.querySelector(".btnShowFilter");
+    const allBtnViewMore = document.querySelectorAll(".btnViewMore");
     displayProducts(productsTab);
+    let isFilterVisible = false;
     btnShowFilter?.addEventListener("click", () => {
         filter?.classList.toggle("showFilter");
+        isFilterVisible = !isFilterVisible;
+        if (isFilterVisible) {
+            btnShowFilter.textContent = "Cacher filtre";
+        }
+        else {
+            btnShowFilter.textContent = "Afficher filtre";
+        }
     });
 });
