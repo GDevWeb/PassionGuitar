@@ -47,6 +47,7 @@ h6 {
   text-wrap: balance;
   font-weight: bolder;
   text-align: center;
+  margin-bottom: $default-margin;
 }
 
 h1 {
@@ -73,22 +74,23 @@ h6 {
   font-size: clamp($min-font-size, 2.5vw, $max-font-size);
 }
 
-p {
+p,
+a,
+label,
+button {
   text-wrap: pretty;
   margin: $default-margin;
   font-size: clamp(1.6rem, 2vw, 2rem);
+  line-height: 1.6 * $line-height;
 }
 
 a {
-  font-size: clamp(2rem, 2vw, 2rem);
   font-weight: bolder;
-  line-height: 1.8 * $line-height;
 }
 
 /* end fonts :*/
 section {
   padding: $default-padding;
-  // margin-bottom: 50vh;
   text-align: justify;
 }
 

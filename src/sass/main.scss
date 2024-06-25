@@ -21,7 +21,6 @@ nav {
 
   .items a {
     text-decoration: none;
-    font-size: 2rem;
     color: $fontColor;
     padding: 0.5rem;
   }
@@ -284,8 +283,9 @@ section#services {
 
     label {
       text-align: center;
-      font-size: 1.6rem;
+      // font-size: 1.6rem;
       margin-bottom: 0.5rem;
+      font-weight: bolder;
     }
 
     input,
@@ -297,6 +297,7 @@ section#services {
       font-size: 1.6rem;
       border-radius: 0.4rem;
       border: 0.1rem solid #ccc;
+      text-align: center;
     }
 
     textarea {
@@ -308,9 +309,9 @@ section#services {
   .btn-form {
     flex: 0 0 20%;
     display: inline-block;
-    width: 20%;
+    min-width: 125px;
     margin: auto;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     background-color: $primaryColor;
     color: $fontColor;
     text-decoration: none;
@@ -441,6 +442,7 @@ footer {
     transition: opacity 0.5s ease-in-out, height 0.2s ease-in-out;
     overflow: hidden;
   }
+
 
   .detail.show {
     opacity: 1;

@@ -140,3 +140,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+/* Copyright dynamique */
+
+const copyright = document.querySelector("span.copyright") as HTMLElement;
+
+const date = new Date();
+const getDate = Date.now();
+const currentYear = date.getFullYear() as Date;
+
+if (copyright) {
+  copyright.textContent = currentYear;
+}

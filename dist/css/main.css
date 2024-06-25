@@ -33,6 +33,7 @@ h6 {
   text-wrap: balance;
   font-weight: bolder;
   text-align: center;
+  margin-bottom: 1.6rem;
 }
 
 h1 {
@@ -59,16 +60,18 @@ h6 {
   font-size: clamp(1.4rem, 2.5vw, 2.8rem);
 }
 
-p {
+p,
+a,
+label,
+button {
   text-wrap: pretty;
   margin: 1.6rem;
   font-size: clamp(1.6rem, 2vw, 2rem);
+  line-height: 1.92;
 }
 
 a {
-  font-size: clamp(2rem, 2vw, 2rem);
   font-weight: bolder;
-  line-height: 2.16;
 }
 
 /* end fonts :*/
@@ -99,7 +102,6 @@ nav .liste {
 }
 nav .items a {
   text-decoration: none;
-  font-size: 2rem;
   color: #fff;
   padding: 0.5rem;
 }
@@ -330,8 +332,8 @@ section#services {
 }
 .contact-form .form-group label {
   text-align: center;
-  font-size: 1.6rem;
   margin-bottom: 0.5rem;
+  font-weight: bolder;
 }
 .contact-form .form-group input,
 .contact-form .form-group select,
@@ -342,6 +344,7 @@ section#services {
   font-size: 1.6rem;
   border-radius: 0.4rem;
   border: 0.1rem solid #ccc;
+  text-align: center;
 }
 .contact-form .form-group textarea {
   resize: vertical;
@@ -350,9 +353,9 @@ section#services {
 .contact-form .btn-form {
   flex: 0 0 20%;
   display: inline-block;
-  width: 20%;
+  min-width: 125px;
   margin: auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: #333;
   color: #fff;
   text-decoration: none;
