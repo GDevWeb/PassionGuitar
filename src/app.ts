@@ -152,3 +152,5 @@ const currentYear = date.getFullYear() as Date;
 if (copyright) {
   copyright.textContent = currentYear;
 }
+
+// fixe navbar
