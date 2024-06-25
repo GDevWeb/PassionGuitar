@@ -14,7 +14,8 @@ body {
   min-width: 425px;
   margin: 0 auto;
   font-size: 1.6rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #f2f2f2;
 }
 
@@ -223,13 +224,13 @@ section#services {
   background-color: green;
 }
 #selection .filter-container .filter .btnFilter.electric {
-  background-color: #FF0000;
+  background-color: #ff0000;
 }
 #selection .filter-container .filter .btnFilter.electro_accoustic {
-  background-color: #4682B4;
+  background-color: #4682b4;
 }
 #selection .filter-container .filter .btnFilter.classique {
-  background-color: #964B00;
+  background-color: #964b00;
 }
 #selection #container-btnShowFilter {
   width: 100%;
@@ -495,3 +496,5 @@ footer {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+/* fixed visibility navbar */
