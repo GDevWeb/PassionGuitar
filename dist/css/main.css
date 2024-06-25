@@ -95,10 +95,15 @@ nav {
   background-color: #333;
 }
 nav .liste {
-  display: flex;
+  display: none;
   margin: auto;
   padding: 1.6rem;
   list-style-type: none;
+}
+@media screen and (min-width: 769px) {
+  nav .liste {
+    display: flex;
+  }
 }
 nav .items a {
   text-decoration: none;
@@ -110,12 +115,17 @@ nav .items a:hover {
   color: #ffa500;
 }
 nav .btn-responsive {
-  display: none;
+  display: block;
   background-color: transparent;
   border: none;
   color: #fff;
   cursor: pointer;
   font-size: 2rem;
+}
+@media screen and (min-width: 769px) {
+  nav .btn-responsive {
+    display: none;
+  }
 }
 
 /* Hero Banner */
