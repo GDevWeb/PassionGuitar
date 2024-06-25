@@ -18,7 +18,6 @@ const btnFilter = document.querySelectorAll(
 ) as NodeListOf<HTMLButtonElement>;
 
 btnFilter.forEach((button) => {
-  console.log("Attaching event to button:", button); // Log pour vérifier si les boutons existent
   button.addEventListener("click", (e: Event) => {
     console.log("Button clicked");
 
@@ -123,10 +122,33 @@ function handleClick(event: Event) {
 document.addEventListener("DOMContentLoaded", () => {
   const filter = document.querySelector(".filter");
   const btnShowFilter = document.querySelector(".btnShowFilter");
+  const allBtnViewMore = document.querySelectorAll(".btnViewMore");
 
   displayProducts(productsTab);
 
+  let isFilterVisible = false;
+
   btnShowFilter?.addEventListener("click", () => {
     filter?.classList.toggle("showFilter");
+
+    isFilterVisible = !isFilterVisible;
+
+    if (isFilterVisible) {
+      btnShowFilter.textContent = "Cacher filtre";
+    } else {
+      btnShowFilter.textContent = "Afficher filtre";
+    }
   });
 });
+
+/* Copyright dynamique */
+
+const copyright = document.querySelector("span.copyright") as HTMLElement;
+
+const date = new Date();
+const getDate = Date.now();
+const currentYear = date.getFullYear() as Date;
+
+if (copyright) {
+  copyright.textContent = currentYear;
+}

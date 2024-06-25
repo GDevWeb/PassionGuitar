@@ -1,56 +1,58 @@
-@import './reset.scss';
-@import './preset.scss';
-@import './colors.scss';
+@import 'reset.scss';
+@import 'mixins';
+@import 'colors.scss';
 
 /* Navigation */
 nav {
-  background-color: $primaryColor;
-  padding: 1rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  border-radius: $default-border-radius;
+  margin-bottom: $default-margin;
+  padding: $default-padding;
+  background-color: $primaryColor;
+
+  .liste {
+    display: flex;
+    margin: auto;
+    padding: $default-padding;
+    list-style-type: none;
+  }
+
+  .items a {
+    text-decoration: none;
+    color: $fontColor;
+    padding: 0.5rem;
+  }
+
+  .items a:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ffa500;
+  }
+
+  .btn-responsive {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: $fontColor;
+    cursor: pointer;
+    font-size: 2rem;
+  }
 }
 
-.liste {
-  margin: auto;
-  list-style-type: none;
-  display: flex;
-}
-
-.items {
-  margin-right: 1rem;
-}
-
-.items a {
-  text-decoration: none;
-  font-size: 2rem;
-  color: $fontColor;
-  padding: 0.5rem;
-}
-
-.items a:hover {
-  transition: all 0.2s ease-in-out;
-  color: #ffa500;
-}
-
-.btn-responsive {
-  display: none;
-  background-color: transparent;
-  border: none;
-  color: $fontColor;
-  cursor: pointer;
-  font-size: 2rem;
-}
+// end navigation
 
 /* Hero Banner */
 #heroBanner {
   position: relative;
+  border-radius: $default-border-radius;
 }
 
 #heroBanner figure {
   position: relative;
   height: 40rem;
   overflow: hidden;
+  border-radius: $default-border-radius;
 }
 
 #heroBanner video {
@@ -73,31 +75,33 @@ nav {
   text-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
 }
 
-
-// section {
-//   height: 100vh;
-//   display: flex;
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: space-evenly;
-// }
-
 /* About Section */
 section#about {
   margin: 5rem 0;
 
   p {
-    font-size: 1.4rem;
-    text-align: justify;
+    font-size: 1.8rem;
   }
+}
+
+
+section#services {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: $default-gap;
 }
 
 /* Selection Section */
 #selection {
   .filter-container {
     display: flex;
+    gap: $default-gap;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    padding: $default-padding;
+
 
     p {
       flex-basis: 10%;
@@ -109,14 +113,14 @@ section#about {
     .filter {
       flex-basis: 60%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: center;
+      justify-content: center;
       margin-bottom: 0.5rem;
 
       button.btnFilter {
         display: inline-block;
-        min-width: 125px;
-        padding: 0.5rem 1rem;
-        padding: 1.2rem;
+        min-width: 100px;
+        padding: 1rem 2rem;
         margin: 0.2rem;
         background-color: $primaryColor;
         font-size: 1.2rem;
@@ -151,11 +155,22 @@ section#about {
       }
     }
 
+  }
+
+  #container-btnShowFilter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
     .btnShowFilter {
-      flex-basis: 10%;
+      min-width: 120px;
+      padding: 0.5rem 1rem;
       border: 0.1rem solid transparent;
-      padding: 0.1rem;
       font-size: 2rem;
+      border-radius: $default-border-radius;
+      background-color: grey;
+      color: $fontColor;
       cursor: pointer;
     }
   }
@@ -169,13 +184,16 @@ section#about {
 .cards {
   display: flex;
   justify-content: space-evenly;
-  gap: 0.5rem;
+  gap: $default-gap;
+  padding: $default-padding;
   flex-wrap: wrap;
 
   .card {
-    flex-basis: 33%;
     display: flex;
     flex-direction: column;
+    gap: $default-gap;
+    flex-basis: 33%;
+    padding: $default-padding;
     background-color: $fontColor;
     border-radius: 0.4rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
@@ -188,6 +206,7 @@ section#about {
         width: 100%;
         height: auto;
         object-fit: cover;
+        border-radius: $default-border-radius;
       }
     }
 
@@ -264,8 +283,9 @@ section#about {
 
     label {
       text-align: center;
-      font-size: 1.6rem;
+      // font-size: 1.6rem;
       margin-bottom: 0.5rem;
+      font-weight: bolder;
     }
 
     input,
@@ -277,6 +297,7 @@ section#about {
       font-size: 1.6rem;
       border-radius: 0.4rem;
       border: 0.1rem solid #ccc;
+      text-align: center;
     }
 
     textarea {
@@ -288,9 +309,9 @@ section#about {
   .btn-form {
     flex: 0 0 20%;
     display: inline-block;
-    width: 20%;
+    min-width: 125px;
     margin: auto;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     background-color: $primaryColor;
     color: $fontColor;
     text-decoration: none;
@@ -334,6 +355,7 @@ footer {
   background-color: $primaryColor;
   color: $fontColor;
   padding: 2rem;
+  border-radius: $default-border-radius;
   text-align: center;
 }
 
@@ -421,11 +443,13 @@ footer {
     overflow: hidden;
   }
 
+
   .detail.show {
     opacity: 1;
     height: auto;
   }
 }
+
 
 @media screen and (max-width: 375px) {
 

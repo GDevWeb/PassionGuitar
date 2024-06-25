@@ -1,0 +1,99 @@
+@import 'mixins';
+@import 'colors';
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: $max-width-screen;
+  min-width: $min-width-screen;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: $backgroundColor-primary;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: $default-padding;
+}
+
+// fonts 
+
+// font size : 
+$font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+$min-font-size: 1.4rem;
+$max-font-size: 2.8rem;
+$default-fontSize: 1.6rem;
+$line-height: 1.2;
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: $default-margin;
+}
+
+h1 {
+  font-size: clamp($min-font-size, 5vw, $max-font-size);
+}
+
+h2 {
+  font-size: clamp($min-font-size, 4.5vw, $max-font-size);
+}
+
+h3 {
+  font-size: clamp($min-font-size, 4vw, $max-font-size);
+}
+
+h4 {
+  font-size: clamp($min-font-size, 3.5vw, $max-font-size);
+}
+
+h5 {
+  font-size: clamp($min-font-size, 3vw, $max-font-size);
+}
+
+h6 {
+  font-size: clamp($min-font-size, 2.5vw, $max-font-size);
+}
+
+p,
+a,
+label,
+button {
+  text-wrap: pretty;
+  margin: $default-margin;
+  font-size: clamp(1.6rem, 2vw, 2rem);
+  line-height: 1.6 * $line-height;
+}
+
+a {
+  font-weight: bolder;
+}
+
+/* end fonts :*/
+section {
+  padding: $default-padding;
+  text-align: justify;
+}
+
+.filter.show {
+  visibility: hidden;
+}
