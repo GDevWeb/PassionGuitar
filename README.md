@@ -53,8 +53,9 @@ Puis ouvrez `index.html` dans votre navigateur.
 
 **Gaëtan Dammaretz**
 Développeur Frontend – Lille
- [gaetan.dammaretz.dev@gmail.com](mailto:gaetan.dammaretz.dev@gmail.com)
- [Profil LinkedIn](https://www.linkedin.com/in/gaëtan-dammaretz/) · [GitHub](https://github.com/gdevweb)
+ - [gaetan.dammaretz.dev@gmail.com](mailto:gaetan.dammaretz.dev@gmail.com)
+ - [Profil LinkedIn](https://www.linkedin.com/in/gaëtan-dammaretz/) ·
+ - [GitHub](https://github.com/gdevweb)
 
 ---
 
