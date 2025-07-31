@@ -1,24 +1,63 @@
-<h1 align="center">Salut 👋, Je suis Gaëtan Dammaretz</h1>
-<h3 align="center">Projet personnel - en HTML SASS et TypeScript</h3>
+# 🎸 PassionGuitar – Site vitrine boutique
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=aescanor&label=Profile%20views&color=0e75b6&style=flat" alt="aescanor" /> </p>
+**Projet personnel** réalisé pour un ami artisan luthier, dans le cadre d’un apprentissage des bases du DOM, du stylage SASS et de l’organisation d’un mini-site e-commerce statique.
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=aescanor" alt="aescanor" /></a> </p>
+---
 
-- 🔭 Je travaille sur un projet personnel **Passion Guitare**
+##  Objectifs
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/gaëtandammaretz" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="gaëtan dammaretz" height="30" width="40" /></a>
-</p>
+- Mettre en valeur une petite boutique de guitares
+- Appliquer les fondamentaux du HTML, SASS, TypeScript
+- Approche responsive mobile-first
+- Dynamisme léger avec JavaScript vanilla
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a><a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> </p>
+---
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=gdevweb&show_icons=true&locale=en&layout=compact" alt="gdevweb" /></p>
+##  Stack utilisée
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=gdevweb&show_icons=true&locale=en" alt="gdevweb" /></p>
+- HTML5 sémantique
+- SASS (structure modulaire)
+- TypeScript (logique légère)
+- JavaScript Vanilla (DOM)
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=gdevweb&" alt="gdevweb" /></p>
+---
 
-https://gdevweb.github.io/Game-Memory-Card/
+##  Aperçu
+
+> L’utilisateur peut naviguer entre les sections, consulter des fiches de guitare, et utiliser un **panier local non connecté** (prototype).
+
+🔗 **[Voir la démo en ligne](https://gdevweb.github.io/PassionGuitar/)**
+
+---
+
+##  Installation
+
+```bash
+git clone https://github.com/Aescanor/PassionGuitar.git
+cd PassionGuitar
+````
+
+Puis ouvrez `index.html` dans votre navigateur.
+
+---
+
+##  Remarques
+
+* Ce projet n’est **pas destiné à la production**.
+* Il reflète une **phase de découverte** du DOM, de l’intégration et de l’organisation SASS/TS.
+* Il ne gère **aucune donnée réelle** et ne possède pas de backend.
+
+---
+
+##  Auteur
+
+**Gaëtan Dammaretz**
+Développeur Frontend – Lille
+ [gaetan.dammaretz.dev@gmail.com](mailto:gaetan.dammaretz.dev@gmail.com)
+ [Profil LinkedIn](https://www.linkedin.com/in/gaëtan-dammaretz/) · [GitHub](https://github.com/gdevweb)
+
+---
+
+© 2025 – Ce projet est fourni à titre de démonstration. Toute reproduction commerciale interdite.
+
+
