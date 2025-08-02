@@ -1,112 +1,117 @@
-import productsTab from "./productsTab.js";
-// Assurez-vous que btnFilter est correctement sélectionné
-const btnFilter = document.querySelectorAll(".btnFilter");
-btnFilter.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        console.log("Button clicked");
-        const target = e.target;
-        if (!target) {
+"use strict";
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+mobileMenuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+});
+// Filter functionality
+const filterButtons = document.querySelectorAll(".filter-btn");
+const guitarCards = document.querySelectorAll(".guitar-card");
+filterButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        // Update active button
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.getAttribute("data-filter");
+        guitarCards.forEach((card) => {
+            if (filter === "all" ||
+                card.getAttribute("data-category") === filter) {
+                card.style.display = "block";
+                setTimeout(() => {
+                    card.style.opacity = "1";
+                    card.style.transform = "scale(1)";
+                }, 10);
+            }
+            else {
+                card.style.opacity = "0";
+                card.style.transform = "scale(0.8)";
+                setTimeout(() => {
+                    card.style.display = "none";
+                }, 300);
+            }
+        });
+    });
+});
+// Back to top button
+const backToTopBtn = document.getElementById("back-to-top");
+window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+        backToTopBtn?.classList.remove("opacity-0", "invisible");
+        backToTopBtn?.classList.add("opacity-100", "visible");
+    }
+    else {
+        backToTopBtn?.classList.add("opacity-0", "invisible");
+        backToTopBtn?.classList.remove("opacity-100", "visible");
+    }
+});
+backToTopBtn?.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+});
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (!this) {
             return;
         }
-        const category = target.value;
-        console.log("Category:", category); // Log pour vérifier la catégorie
-        if (category === "all") {
-            displayProducts(productsTab);
-        }
-        else {
-            const filteredByCat = productsTab.filter((product) => product.category === category);
-            displayProducts(filteredByCat);
-        }
-    });
-});
-function displayProducts(products) {
-    const selectionContainer = document.querySelector("#selection .cards");
-    if (!selectionContainer)
-        return;
-    selectionContainer.innerHTML = "";
-    products.forEach((product) => {
-        const card = document.createElement("div");
-        card.classList.add("card");
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
-        img.src = product.img;
-        img.alt = product.make;
-        figure.appendChild(img);
-        card.appendChild(figure);
-        const cardContent = document.createElement("div");
-        cardContent.classList.add("card-content");
-        const title = document.createElement("h3");
-        title.textContent = product.make;
-        const reference = document.createElement("h4");
-        reference.textContent = `Référence: ${product.reference}`;
-        cardContent.appendChild(reference);
-        const description = document.createElement("p");
-        description.classList.add("detail");
-        description.textContent = product.description;
-        cardContent.appendChild(title);
-        cardContent.appendChild(description);
-        card.appendChild(cardContent);
-        const btnMoreContainer = document.createElement("div");
-        btnMoreContainer.classList.add("btnMore-container");
-        const btnCat = document.createElement("a");
-        btnCat.href = "#";
-        btnCat.classList.add("btnMore");
-        btnCat.textContent = product.category;
-        btnCat.style.backgroundColor = product.backgroundColorButton;
-        btnMoreContainer.appendChild(btnCat);
-        card.appendChild(btnMoreContainer);
-        const btnPrice = document.createElement("a");
-        btnPrice.href = "#contact";
-        btnPrice.classList.add("btnPrice");
-        btnPrice.textContent = `${product.price}€`;
-        btnMoreContainer.appendChild(btnPrice);
-        card.appendChild(btnMoreContainer);
-        const btnViewMoreContainer = document.createElement("div");
-        btnViewMoreContainer.classList.add("container-ViewMore");
-        card.appendChild(btnViewMoreContainer);
-        const viewMore = document.createElement("button");
-        viewMore.type = "button";
-        const viewMoreId = `btn_${Date.now()}`;
-        viewMore.setAttribute("id", viewMoreId);
-        viewMore.textContent = "En savoir plus";
-        viewMore.classList.add("btnViewMore");
-        viewMore.addEventListener("click", handleClick);
-        btnViewMoreContainer.appendChild(viewMore);
-        selectionContainer.appendChild(card);
-    });
-}
-function handleClick(event) {
-    const target = event.target;
-    if (!target)
-        return;
-    const detailProduct = target.closest(".card")?.querySelector("p.detail");
-    if (!detailProduct)
-        return;
-    detailProduct.classList.toggle("show");
-}
-document.addEventListener("DOMContentLoaded", () => {
-    const filter = document.querySelector(".filter");
-    const btnShowFilter = document.querySelector(".btnShowFilter");
-    const allBtnViewMore = document.querySelectorAll(".btnViewMore");
-    displayProducts(productsTab);
-    let isFilterVisible = false;
-    btnShowFilter?.addEventListener("click", () => {
-        filter?.classList.toggle("showFilter");
-        isFilterVisible = !isFilterVisible;
-        if (isFilterVisible) {
-            btnShowFilter.textContent = "Cacher filtre";
-        }
-        else {
-            btnShowFilter.textContent = "Afficher filtre";
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+            });
+            // Close mobile menu if open
+            mobileMenu?.classList.add("hidden");
         }
     });
 });
-/* Copyright dynamique */
-const copyright = document.querySelector("span.copyright");
-const date = new Date();
-const getDate = Date.now();
-const currentYear = date.getFullYear();
-if (copyright) {
-    copyright.textContent = currentYear;
-}
-// fixe navbar
+// Form submission
+const contactForm = document.querySelector(".contact-form");
+contactForm?.addEventListener("submit", function (e) {
+    e.preventDefault();
+    // Simple form validation feedback
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML =
+        '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
+    submitBtn.disabled = true;
+    // Simulate form submission
+    setTimeout(() => {
+        submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message envoyé !';
+        submitBtn.classList.add("bg-green-500", "hover:bg-green-600");
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("bg-green-500", "hover:bg-green-600");
+            this.reset();
+        }, 2000);
+    }, 1500);
+});
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+};
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+// Observe all animated elements
+document
+    .querySelectorAll(".animate-slide-up, .animate-scale, .animate-fade-in")
+    .forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition =
+        "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+    observer.observe(el);
+});

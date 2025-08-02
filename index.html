@@ -1,247 +1,902 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Passion, guitare, cours, tablatures, vente, musique, instruments, concert, événements.">
-    <script type="module" src="dist/app.js" defer></script>
-    <script  src="scripts/navbar.js" defer></script>
-    <script src="scripts/btnBackToTop.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="./assets/favicon/icon guitar.png" type="image/x-icon">
-    <link rel="stylesheet" href="dist/css/main.css">
-    <title>Passion Guitar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🔍 SEO -->
+  <title>Passion Guitare - Cours, Vente & Réparation d'Instruments</title>
+  <meta name="description" content="Découvrez Passion Guitare, un site vitrine dédié à l'univers de la guitare : cours personnalisés, vente d’instruments acoustiques et électriques, services de réparation. Responsive, moderne et accessible." />
+  <link rel="canonical" href="https://www.passionguitare.fr/" />
+
+  <!-- 🟦 Open Graph (Facebook, LinkedIn...) -->
+  <meta property="og:title" content="Passion Guitare - Cours, Vente & Réparation d'Instruments" />
+  <meta property="og:description" content="Découvrez notre univers autour de la guitare : cours sur mesure, instruments de qualité, réparations et accessoires. Un site moderne pensé pour les passionnés." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.passionguitare.fr/" />
+  <meta property="og:image" content="https://gdevweb.github.io/PassionGuitar/assets/passion_guitare_v2.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Passion Guitare - Cours, Vente & Réparation d'Instruments" />
+  <meta name="twitter:description" content="Cours personnalisés, vente d’instruments de guitare, réparations : découvrez Passion Guitare." />
+  <meta name="twitter:image" content="https://gdevweb.github.io/PassionGuitar/assets/passion_guitare_v2.png" />
+
+  <!-- Icons, Fonts & Styles -->
+  <link rel="icon" href="./assets/favicon/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="dist/css/main.css" />
 </head>
 
-<body>
-    <!-- start container  -->
-    <div class="container">
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect animate-fade-in">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0">
+            <h1 class="text-2xl font-bold text-white font-display">
+              <i class="fas fa-guitar mr-2 text-yellow-400"></i>
+              Passion Guitare
+            </h1>
+          </div>
 
-        <!-- start nav : -->
-        <nav>
-            <ul class="liste">
-                <li class="items"><a href="#about">About</a></li>
-                <li class="items"><a href="#services">Services</a></li>
-                <li class="items"><a href="#selection">Sélection</a></li>
-                <li class="items"><a href="#contact">Contact</a></li>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="#about"
+                class="text-black hover:text-yellow-400 transition-colors duration-300 font-medium"
+                >À propos</a
+              >
+              <a
+                href="#services" aria-label="Aller à la section Services"
+                class="text-black hover:text-yellow-400 transition-colors duration-300 font-medium"
+                >Services</a
+              >
+              <a
+                href="#selection" aria-label="Aller à la section Sélection"
+                class="text-black hover:text-yellow-400 transition-colors duration-300 font-medium"
+                >Sélection</a
+              >
+              <a
+                href="#contact" aria-label="Aller à la section Contact"
+                class="text-black hover:text-yellow-400 transition-colors duration-300 font-medium"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <div class="md:hidden">
+            <button
+            type="button"
+              id="mobile-menu-btn"
+              class="text-white hover:text-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+              aria-label="Menu mobile"
+            >
+              <i class="fas fa-bars text-xl"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div
+            class="px-2 pt-2 pb-3 space-y-1 bg-black bg-opacity-90 rounded-lg mt-2"
+            role="menu"
+          >
+            <a
+              href="#about"
+              class="text-white hover:text-yellow-400 block px-3 py-2 font-medium"
+              >À propos</a
+            >
+            <a
+              href="#services"
+              class="text-white hover:text-yellow-400 block px-3 py-2 font-medium"
+              >Services</a
+            >
+            <a
+              href="#selection"
+              class="text-white hover:text-yellow-400 block px-3 py-2 font-medium"
+              >Sélection</a
+            >
+            <a
+              href="#contact" aria-label="Aller à la section Contact"
+              class="text-white hover:text-yellow-400 block px-3 py-2 font-medium"
+              >Contact</a
+            ></div>
+          </>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="hero-bg text-white section-padding pt-24 relative overflow-hidden"
+      aria-labelledby="hero-title"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center animate-slide-up">
+          <h1
+            id="hero-title"
+            class="text-5xl md:text-7xl font-bold font-display mb-6"
+          >
+            Passion <span class="text-gradient">Guitare</span>
+          </h1>
+          <p
+            class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-300 leading-relaxed"
+          >
+            Découvrez l'univers passionnant de la guitare avec nos cours
+            personnalisés, notre sélection d'instruments de qualité et nos
+            services professionnels.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#services" role="button" aria-label="Découvrir nos services"
+              class="btn-modern px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              Découvrir nos services
+            </a>
+            <a role="button" aria-label="Nous contacter"
+              href="#contact"
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300"
+            >
+              Nous contacter
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Elements -->
+      <div class="absolute top-20 left-10 opacity-20">
+        <i class="fas fa-music text-6xl text-yellow-400"></i>
+      </div>
+      <div class="absolute bottom-20 right-10 opacity-20">
+        <i class="fas fa-guitar text-8xl text-yellow-400"></i>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="section-padding bg-white"
+      aria-labelledby="about-title"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="animate-slide-up">
+            <h2
+              id="about-title"
+              class="text-4xl md:text-5xl font-bold font-display mb-6 text-gray-900"
+            >
+              À propos de notre <span class="text-gradient">passion</span>
+            </h2>
+            <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <p>
+                Passionnés de guitare depuis plus de 10 ans, nous sommes animés
+                par l'amour de cet instrument exceptionnel et la volonté de
+                transmettre notre expertise.
+              </p>
+              <p>
+                Notre mission est de partager cette passion et d'accompagner
+                chaque musicien, du débutant au confirmé, dans son parcours
+                musical unique.
+              </p>
+              <p>
+                Nous proposons des cours personnalisés, une sélection
+                d'instruments de qualité et des services professionnels pour
+                tous vos besoins musicaux.
+              </p>
+            </div>
+
+            <div class="mt-8 grid grid-cols-3 gap-6 text-center">
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-yellow-600 mb-2">10+</div>
+                <div class="text-sm text-gray-600">Années d'expérience</div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-yellow-600 mb-2">500+</div>
+                <div class="text-sm text-gray-600">Élèves formés</div>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-xl">
+                <div class="text-3xl font-bold text-yellow-600 mb-2">100+</div>
+                <div class="text-sm text-gray-600">Instruments vendus</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="animate-scale">
+            <div class="relative">
+              <div
+                class="bg-gradient-to-br from-yellow-400 to-red-500 p-8 rounded-3xl shadow-2xl"
+              >
+                <i
+                  class="fas fa-guitar text-white text-9xl mx-auto block opacity-80"
+                ></i>
+              </div>
+              <div
+                class="absolute -top-4 -right-4 bg-white p-4 rounded-full shadow-lg"
+              >
+                <i class="fas fa-music text-2xl text-yellow-500"></i>
+              </div>
+              <div
+                class="absolute -bottom-4 -left-4 bg-white p-4 rounded-full shadow-lg"
+              >
+                <i class="fas fa-heart text-2xl text-red-500"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="section-padding pattern-bg"
+      aria-labelledby="services-title"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-slide-up">
+          <h2
+            id="services-title"
+            class="text-4xl md:text-5xl font-bold font-display mb-6 text-gray-900"
+          >
+            Nos <span class="text-gradient">Services</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Découvrez notre gamme complète de services dédiés à votre passion
+            musicale
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="card-modern hover-lift p-8 animate-scale">
+            <div class="text-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-chalkboard-teacher text-2xl text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Cours de guitare
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Cours personnalisés adaptés à votre niveau et à votre style de
+              jeu. De l'initiation au perfectionnement.
+              </p>
+            <a
+              href="#contact"
+              class="btn-modern px-6 py-3 rounded-full text-white font-semibold inline-block hover:shadow-lg transition-all duration-300"
+            >
+              En savoir plus
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="card-modern hover-lift p-8 animate-scale">
+            <div class="text-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-guitar text-2xl text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Vente d'instruments
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Sélection d'instruments acoustiques et électriques de haute
+              qualité, neufs et d'occasion.
+              </p>
+            <a
+              href="#selection"
+              class="btn-modern px-6 py-3 rounded-full text-white font-semibold inline-block hover:shadow-lg transition-all duration-300"
+            >
+              Voir la sélection
+            </a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="card-modern hover-lift p-8 animate-scale">
+            <div class="text-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-tools text-2xl text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Entretien & Réparation
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Services professionnels d'entretien et de réparation pour
+              maintenir vos instruments en parfait état.
+              </p>
+            <a
+              href="#contact"
+              class="btn-modern px-6 py-3 rounded-full text-white font-semibold inline-block hover:shadow-lg transition-all duration-300"
+            >
+              Nous contacter
+            </a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="card-modern hover-lift p-8 animate-scale">
+            <div class="text-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-book-open text-2xl text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Ressources pédagogiques
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Collection de partitions, tablatures et tutoriels pour améliorer
+              vos compétences musicales.
+              </p>
+            <a
+              href="#contact"
+              class="btn-modern px-6 py-3 rounded-full text-white font-semibold inline-block hover:shadow-lg transition-all duration-300"
+            >
+              Découvrir
+            </a>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="flex flex-col items-center justif-evenly card-modern hover-lift p-8 animate-scale">
+            <div class="text-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-calendar-alt text-2xl text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Événements & Ateliers
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Participez à nos événements musicaux, concerts et masterclasses
+              pour enrichir votre expérience.
+              </p>
+              <div class="w-full items-center">
+                  <a
+                  href="#contact"
+                  class="btn-modern px-6 py-3 rounded-full text-white font-semibold inline-block hover:shadow-lg transition-all duration-300"
+                  >
+                  Participer
+                </a>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="card-modern hover-lift p-8 animate-scale">
+            <div class="text-center mb-6">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-tshirt text-2xl text-white"></i>
+              </div>
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Produits dérivés
+              </h3>
+            </div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Découvrez notre gamme de produits dérivés : t-shirts, accessoires
+              et objets pour les passionnés.
+              </p>
+            <a
+              href="#contact"
+              class="btn-modern px-6 py-3 rounded-full text-white font-semibold inline-block hover:shadow-lg transition-all duration-300"
+            >
+              Explorer
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selection Section -->
+    <section
+      id="selection"
+      class="section-padding bg-white"
+      aria-labelledby="selection-title"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-slide-up">
+          <h2
+            id="selection-title"
+            class="text-4xl md:text-5xl font-bold font-display mb-6 text-gray-900"
+          >
+            Notre <span class="text-gradient">Sélection</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Découvrez notre collection soigneusement sélectionnée de guitares
+            acoustiques, électriques et classiques
+          </p>
+
+          <!-- Filters -->
+          <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button
+            type="button"
+              class="filter-btn active px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300" aria-pressed="true"
+              data-filter="all"
+            >
+              Toutes
+            </button>
+            <button
+            type="button"
+              class="filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300" aria-pressed="false"
+              data-filter="electrique"
+            >
+              Électriques
+            </button>
+            <button
+            type="button"
+              class="filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300" aria-pressed="false"
+              data-filter="acoustique"
+            >
+              Acoustiques
+            </button>
+            <button
+            type="button"
+              class="filter-btn px-6 py-3 rounded-full bg-gray-200 text-gray-700 font-semibold hover:bg-gray-300" aria-pressed="false"
+              data-filter="classique"
+            >
+              Classiques
+            </button>
+          </div>
+        </div>
+
+        <!-- Guitar Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="guitar-grid">
+          <!-- Guitar 1 -->
+          <div
+            class="flex flex-col card-modern hover-lift overflow-hidden guitar-card animate-scale"
+            data-category="electrique"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center"
+            >
+              <i class="fas fa-guitar text-white text-8xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Guitare Électrique Premium
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Guitare électrique de haute qualité avec un son exceptionnel et
+                une finition parfaite.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-yellow-600">€899</span>
+                <a
+                  href="#contact"
+                  class="btn-modern px-4 py-2 rounded-full text-white font-semibold text-sm"
+                >
+                  Contacter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guitar 2 -->
+          <div
+            class="flex flex-col card-modern hover-lift overflow-hidden guitar-card animate-scale"
+            data-category="acoustique"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-purple-500 to-pruple-700 flex items-center justify-center"
+            >
+              <i class="fas fa-guitar text-white text-8xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Guitare Acoustique Artisanale
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Guitare acoustique fabriquée avec des bois nobles pour une
+                sonorité chaleureuse.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-yellow-600">€1,299</span>
+                <a
+                  href="#contact"
+                  class="btn-modern px-4 py-2 rounded-full text-white font-semibold text-sm"
+                >
+                  Contacter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guitar 3 -->
+          <div
+            class="flex flex-col card-modern hover-lift overflow-hidden guitar-card animate-scale"
+            data-category="classique"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center"
+            >
+              <i class="fas fa-guitar text-white text-8xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Guitare Classique Traditionnelle
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Guitare classique avec cordes en nylon, parfaite pour débuter ou
+                jouer du répertoire traditionnel.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-yellow-600">€449</span>
+                <a
+                  href="#contact"
+                  class="btn-modern px-4 py-2 rounded-full text-white font-semibold text-sm"
+                >
+                  Contacter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guitar 4 -->
+          <div
+            class="flex flex-col card-modern hover-lift overflow-hidden guitar-card animate-scale"
+            data-category="electrique"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center"
+            >
+              <i class="fas fa-guitar text-white text-8xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Guitare Électrique Vintage
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Guitare électrique au style vintage avec un caractère unique et
+                un son authentique.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-yellow-600">€1,599</span>
+                <a
+                  href="#contact"
+                  class="btn-modern px-4 py-2 rounded-full text-white font-semibold text-sm"
+                >
+                  Contacter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guitar 5 -->
+          <div
+            class="flex flex-col card-modern hover-lift overflow-hidden guitar-card animate-scale"
+            data-category="acoustique"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center"
+            >
+              <i class="fas fa-guitar text-white text-8xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Guitare Folk Premium
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Guitare folk avec une projection sonore exceptionnelle, idéale
+                pour l'accompagnement.
+              </p></div>
+              <div class="flex justify-between items-center px-4">
+                <span class="text-2xl font-bold text-yellow-600">€799</span>
+                <a
+                  href="#contact"
+                  class="btn-modern px-4 py-2 rounded-full text-white font-semibold text-sm"
+                >
+                  Contacter
+                </a>
+              </div>
+          </div>
+
+          <!-- Guitar 6 -->
+          <div
+            class="card-modern hover-lift overflow-hidden guitar-card animate-scale"
+            data-category="classique"
+          >
+            <div
+              class="h-64 bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center"
+            >
+              <i class="fas fa-guitar text-white text-8xl opacity-80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold font-display mb-3">
+                Guitare Classique Estudiante
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Guitare classique d'étude avec un excellent rapport qualité-prix
+                pour débuter.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-yellow-600">€299</span>
+                <a
+                  href="#contact"
+                  class="btn-modern px-4 py-2 rounded-full text-white font-semibold text-sm"
+                >
+                  Contacter
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="section-padding gradient-primary"
+      aria-labelledby="contact-title"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-slide-up">
+          <h2
+            id="contact-title"
+            class="text-4xl md:text-5xl font-bold font-display mb-6 text-white"
+          >
+            Contactez-<span class="text-yellow-400">nous</span>
+          </h2>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Prêt à commencer votre aventure musicale ? Contactez-nous pour plus
+            d'informations
+          </p>
+        </div>
+
+        <form
+          class="contact-form rounded-3xl p-8 animate-scale"
+          role="form"
+          aria-labelledby="contact-title" action="#" method="POST"
+        >
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label for="nom" class="block text-white font-semibold mb-2"
+                >Nom *</label
+              >
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                placeholder="Votre nom"
+                aria-required="true"
+              />
+            </div>
+            <div>
+              <label for="prenom" class="block text-white font-semibold mb-2"
+                >Prénom *</label
+              >
+              <input
+                type="text"
+                id="prenom"
+                name="prenom"
+                required
+                class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                placeholder="Votre prénom"
+                aria-required="true"
+              />
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label for="email" class="block text-white font-semibold mb-2"
+              >Email *</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+              placeholder="votre@email.com"
+              aria-required="true"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label for="sujet" class="block text-white font-semibold mb-2"
+              >Sujet</label
+            >
+            <select
+              id="sujet"
+              name="sujet"
+              class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-10 border border-white border-opacity-20 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent" aria-describedby="sujet-description"
+            >
+              <option value="cours" class="text-gray-900">
+                Cours de guitare
+              </option>
+              <option value="instruments" class="text-gray-900">
+                Vente d'instruments
+              </option>
+              <option value="reparation" class="text-gray-900">
+                Réparation et entretien
+              </option>
+              <option value="ressources" class="text-gray-900">
+                Ressources pédagogiques
+              </option>
+              <option value="evenements" class="text-gray-900">
+                Événements et ateliers
+              </option>
+              <option value="derives" class="text-gray-900">
+                Produits dérivés
+              </option>
+              <option value="autre" class="text-gray-900">Autre</option>
+            </select>
+            <p id="sujet-description" class="sr-only">
+              Sélectionnez le sujet de votre message parmi les options proposées.
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <label for="message" class="block text-white font-semibold mb-2"
+              >Message *</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              required
+              class="w-full px-4 py-3 rounded-xl bg-white bg-opacity-10 border border-white border-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent resize-none"
+              placeholder="Votre message..."
+              aria-required="true"
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="btn-modern px-8 py-4 rounded-full text-white font-semibold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105"
+              aria-label="Envoyer le message"
+            >
+              <i class="fas fa-paper-plane mr-2"></i>
+              Envoyer le message
+            </button>
+          </div>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="mt-16 text-center">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-white">
+              <i
+                class="fas fa-map-marker-alt text-3xl text-yellow-400 mb-4"
+              ></i>
+              <h3 class="text-xl font-semibold mb-2">Adresse</h3>
+              <p class="text-gray-300">
+                123 Rue de la Musique<br />75001 Paris, France
+              </p>
+            </div>
+            <div class="text-white">
+              <i class="fas fa-phone text-3xl text-yellow-400 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Téléphone</h3>
+              <p class="text-gray-300">+33 1 23 45 67 89</p>
+            </div>
+            <div class="text-white">
+              <i class="fas fa-envelope text-3xl text-yellow-400 mb-4"></i>
+              <h3 class="text-xl font-semibold mb-2">Email</h3>
+              <p class="text-gray-300">contact@passionguitare.fr</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="md:col-span-2">
+            <h3 class="text-2xl font-bold font-display mb-4">
+              <i class="fas fa-guitar mr-2 text-yellow-400"></i>
+              Passion Guitare
+            </h3>
+            <p class="text-gray-400 mb-4 leading-relaxed">
+              Votre partenaire musical pour découvrir, apprendre et progresser
+              dans l'univers passionnant de la guitare.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a
+                href="#" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+              <a
+                href="#" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+                aria-label="YouTube"
+              >
+                <i class="fab fa-youtube text-xl" ></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a role="link"
+                  href="#services"
+                  class="hover:text-yellow-400 transition-colors duration-300"
+                  >Cours de guitare</a
+                >
+              </li>
+              <li>
+                <a role="link"
+                  href="#selection"
+                  class="hover:text-yellow-400 transition-colors duration-300"
+                  >Vente d'instruments</a
+                >
+              </li>
+              <li>
+                <a role="link"
+                  href="#contact"
+                  class="hover:text-yellow-400 transition-colors duration-300"
+                  >Réparation</a
+                >
+              </li>
+              <li>
+                <a role="link"
+                  href="#contact"
+                  class="hover:text-yellow-400 transition-colors duration-300"
+                  >Événements</a
+                >
+              </li>
             </ul>
-            <button type="button" class="btn-responsive" aria-label="icon hamburger"><i class="fa-solid fa-bars"></i></button>
-        </nav>
-        <!-- end nav  -->
-         <!-- start heroBanner  -->
-        <header id="heroBanner">
-            <figure>
-                <video autoplay loop muted>
-                    <source src="./assets/videos/hero-banner_vid.mp4" type="video/mp4" alt="video playing guitar">
-                </video>
-                <h1>Passion Guitare</h1>
-            </figure>
-        </header>
-        <!-- end hero banner  -->
+          </div>
 
-        <!-- start main section  -->
-        <main>
-            <section id="about">
-                <article>
-                    <h2>À propos</h2>
-                    <h3><strong>Découvrez notre section "À propos" où vous en apprendrez davantage sur notre passion pour
-                            la guitare et les services que nous proposons :</strong></h3>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><i class="fas fa-phone mr-2"></i> +33 1 23 45 67 89</li>
+              <li><a href="mailto:contact@passionguitare.fr" class="hover:text-yellow-400 transition-colors duration-300" aria-label="Envoyer un email à contact@passionguitare.fr">
+                <i class="fas fa-envelope mr-2"></i> contact@passionguitare.fr
+                </a>
+              </li>
+              <li><i class="fas fa-map-marker-alt mr-2"></i> Paris, France</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>
+            &copy; 2025 Passion Guitare. Tous droits réservés. | Développé avec
+            passion
+          </p>
+        </div>
+      </div>
+    </footer>
 
-                    <p>Passionné de guitare depuis 10 ans, nous sommes animés par l'amour de cet instrument
-                        exceptionnel.</p> <p>Nous croyons fermement en la puissance de la musique pour inspirer, émouvoir et
-                        connecter les individus. Notre objectif est de partager cette passion et de transmettre notre
-                        expertise à tous ceux qui souhaitent se plonger dans l'univers captivant de la guitare.</p>
-
-                        <p>
-                            Nous offrons des cours particuliers personnalisés, adaptés à tous les niveaux, du débutant à
-                            l'avancé.
-                        </p> 
-                        <p>Que vous souhaitiez apprendre les bases, améliorer votre technique ou explorer de
-                        nouveaux styles, notre équipe de professeurs expérimentés est là pour vous accompagner dans
-                        votre parcours musical.</p>
-
-                        <p>
-                            En plus des cours, nous proposons une sélection d'accessoires de qualité pour guitare, vous
-                            permettant d'améliorer votre son et d'explorer de nouvelles possibilités créatives. De plus,
-                            nous avons des guitares acoustiques et électriques de première et seconde main, soigneusement
-                            sélectionnées pour offrir une qualité exceptionnelle à des prix abordables.
-                        </p>
-
-                        <p>Que vous soyez débutant ou passionné de longue date, nous sommes là pour répondre à vos besoins
-                        et vous guider dans votre parcours musical.</p>
-                        <p>
-                        Rejoignez-nous dans notre passion pour la guitare et
-                        découvrez tout ce que nous avons à offrir.</p>
-            </section>
-            <!-- en section about -->
-
-            <!-- start section services -->
-            <section id="services">
-                <article>
-                    <h2>Services</h2>
-                </article>
-                
-                <div class="cards">
-                    <div class="card">
-                        <figure>
-                            <img src="assets/images/guitar_lesson.webp" alt="cours de guitare">
-                        </figure>
-                        <div class="card-content">
-                            <h3>Cours de guitare</h3>
-                            <p>Offrez-vous des cours de guitare personnalisés adaptés à votre niveau et à votre style de
-                                jeu.</p>
-                            </div>
-                            <div class="btnMore-container">
-                                <a href="#" class="btnMore">En savoir plus</a>
-                            </div>
-                    </div>
-
-                    <div class="card">
-                        <figure>
-                            <img src="assets/images/guitars_wall.webp" alt="mur de guitares">
-                        </figure>
-                            <div class="card-content">
-                            <h3>Vente d'instruments</h3>
-                            <p>Découvrez notre sélection d'instruments de guitare acoustique et électrique de haute
-                                qualité.</p>
-                        </div>
-                        <div class="btnMore-container">
-                            <a href="#" class="btnMore">En savoir plus</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure>
-                            <img src="assets/images/restore _guitar - 1.webp" alt="Image réparation de guitare">
-                        </figure>
-                            <div class="card-content">
-                            <h3>Entretien et réparation</h3>
-                            <p>Confiez-nous votre guitare pour un entretien complet ou des réparations professionnelles.
-                                Nos techniciens qualifiés veilleront à ce que votre instrument reste en parfait état de
-                                jeu.</p>
-                        </div>
-                        <div class="btnMore-container">
-                            <a href="#" class="btnMore">En savoir plus</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <figure>
-                            <img src="assets/images/ressources.webp" alt="Image ressources musique">
-                        </figure>
-                        <div class="card-content">
-                            <h3>Ressources pédagogiques</h3>
-                            <p>Découvrez notre collection de ressources pédagogiques, comprenant des partitions, des
-                                tablatures, des tutoriels vidéo et bien plus encore. Améliorez vos compétences et
-                                explorez de nouveaux styles musicaux.</p> 
-                        </div>
-                        <div class="btnMore-container">
-                            <a href="#" class="btnMore">En savoir plus</a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <figure>
-                            <img src="assets/images/evenement - 1.webp" alt="Image événements">
-                        </figure>
-                        <div class="card-content">
-                            <h3>Événements et ateliers</h3>
-                            <p>Participez à nos événements et ateliers spécialement conçus pour les amateurs de guitare.
-                                Rencontrez d'autres passionnés, assistez à des concerts, des masterclasses et développez
-                                votre réseau musical.</p>
-                        </div>
-                        <div class="btnMore-container">
-                            <a href="#" class="btnMore">En savoir plus</a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <figure>
-                            <img src="assets/images/other_products.webp" alt="Image autre produits">
-                        </figure>
-                        <div class="card-content">
-                            <h3>Vente de produits dérivés</h3>
-                            <p>Découvrez notre sélection de produits dérivés pour les fans de guitare. T-shirts,
-                                casquettes, accessoires et bien plus encore. Affichez votre passion avec style.</p> 
-                        </div>
-                        <div class="btnMore-container">
-                            <a href="#" class="btnMore">En savoir plus</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end cards  -->
-            </section>
-            <section id="selection">
-
-                <article>
-                    <h2>Notre sélection de guitare</h2>
-                    <h3><strong>Retrouvez notre sélection de guitare, acoustique, électrique, classique basse et bien
-                        d'autres</strong></h3>
-                    </article>
-
-                    <!-- filtre by cat :  -->  
-                    <div id="container-btnShowFilter">
-                        <button type="button" aria-label="bouton afficher/cacher filtre" class="btnShowFilter">Filtre<i class="fa-solid fa-filter"></i></button> 
-                    </div>
-                    <div class="filter-container">
-                        <div class="filter">
-                            <button value="all" class="btnFilter all">All</button>
-                            <button value="électrique" class="btnFilter electric">Électrique</button>
-                            <button value="électro-acoustique" class="btnFilter electro_accoustic">Électro - acoustique</button>
-                            <button value="classique" class="btnFilter classique">Classique</button>
-                        </div>
-                    </div>
-
-                <div class="cards truncate">
-
-                    <!-- adding js :  -->
-                </div>
-
-
-            </section>
-            <section id="contact">
-                <h2>Contact</h2>
-                <form action="#" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nom :</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="surname">Prénom :</label>
-                        <input type="text" id="surname" name="surname" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="product">Sujet :</label>
-                        <select id="product" name="product">
-                            <option value="cours">Cours de guitare</option>
-                            <option value="instruments">Vente d'instruments</option>
-                            <option value="accessoires">Accessoires pour guitare</option>
-                            <option value="reparations">Réparations et entretien</option>
-                            <option value="ressources">Ressources pédagogiques</option>
-                            <option value="evenements">Événements et ateliers</option>
-                            <option value="derives">Produits dérivés</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message :</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-form">Envoyer</button>
-                </form>
-            </section>
-        </main>
-
-        <button type="button"  class="back-to-top-btn" aria-label="bouton retour en haut de page">
-            <i class="fa-solid fa-chevron-up"></i>
-        </button>
-
-        <footer>
-            <p class="copyright">&copy <span class="copyright">2023</span> Dammaretz Gaëtan - GDevWeb</p>
-            <p> Passion Guitare</p> 
-        </footer>
-    </div>
-    <!-- end container  -->
-</body>
+    <!-- Back to Top Button -->
+    <button
+      id="back-to-top"
+      class="fixed bottom-8 right-8 bg-yellow-500 hover:bg-yellow-600 text-white w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 opacity-0 invisible z-50"
+      aria-label="Retour en haut de page"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+  </body>
 </html>

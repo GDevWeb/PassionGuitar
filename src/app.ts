@@ -1,156 +1,148 @@
-import productsTab from "./productsTab.js";
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById(
+  "mobile-menu-btn"
+) as HTMLButtonElement | null;
+const mobileMenu = document.getElementById("mobile-menu");
 
-// Interface pour les produits
-interface IProductabs {
-  id: number;
-  make: string;
-  reference: string;
-  img: string;
-  description: string;
-  price: number;
-  category: string;
-  backgroundColorButton: string;
-}
+mobileMenuBtn?.addEventListener("click", () => {
+  mobileMenu?.classList.toggle("hidden");
+});
 
-// Assurez-vous que btnFilter est correctement sélectionné
-const btnFilter = document.querySelectorAll(
-  ".btnFilter"
-) as NodeListOf<HTMLButtonElement>;
+// Filter functionality
+const filterButtons = document.querySelectorAll(".filter-btn");
+const guitarCards = document.querySelectorAll(".guitar-card");
 
-btnFilter.forEach((button) => {
-  button.addEventListener("click", (e: Event) => {
-    console.log("Button clicked");
+filterButtons.forEach((button) => {
+  button.addEventListener("click", function (this: HTMLButtonElement) {
+    // Update active button
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
 
-    const target = e.target as HTMLButtonElement;
+    const filter = button.getAttribute("data-filter");
 
-    if (!target) {
-      return;
-    }
+    guitarCards.forEach((card) => {
+      if (
+        filter === "all" ||
+        (card as HTMLElement).getAttribute("data-category") === filter
+      ) {
+        (card as HTMLElement).style.display = "block";
+        setTimeout(() => {
+          (card as HTMLElement).style.opacity = "1";
+          (card as HTMLElement).style.transform = "scale(1)";
+        }, 10);
+      } else {
+        (card as HTMLElement).style.opacity = "0";
+        (card as HTMLElement).style.transform = "scale(0.8)";
+        setTimeout(() => {
+          (card as HTMLElement).style.display = "none";
+        }, 300);
+      }
+    });
+  });
+});
 
-    const category = target.value;
-    console.log("Category:", category); // Log pour vérifier la catégorie
-    if (category === "all") {
-      displayProducts(productsTab);
-    } else {
-      const filteredByCat = productsTab.filter(
-        (product: IProductabs) => product.category === category
+// Back to top button
+const backToTopBtn = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    backToTopBtn?.classList.remove("opacity-0", "invisible");
+    backToTopBtn?.classList.add("opacity-100", "visible");
+  } else {
+    backToTopBtn?.classList.add("opacity-0", "invisible");
+    backToTopBtn?.classList.remove("opacity-100", "visible");
+  }
+});
+
+backToTopBtn?.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener(
+    "click",
+    function (this: HTMLAnchorElement | null, e) {
+      e.preventDefault();
+      if (!this) {
+        return;
+      }
+      const target = document.querySelector(
+        this.getAttribute("href") as string
       );
-      displayProducts(filteredByCat);
+      if (target) {
+        const offsetTop = (target as HTMLElement).offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+
+        // Close mobile menu if open
+        mobileMenu?.classList.add("hidden");
+      }
     }
-  });
+  );
 });
 
-function displayProducts(products: IProductabs[]) {
-  const selectionContainer = document.querySelector(
-    "#selection .cards"
-  ) as HTMLElement;
-  if (!selectionContainer) return;
+// Form submission
+const contactForm = document.querySelector(
+  ".contact-form"
+) as HTMLFormElement | null;
+contactForm?.addEventListener(
+  "submit",
+  function (this: HTMLFormElement, e: Event): void {
+    e.preventDefault();
 
-  selectionContainer.innerHTML = "";
+    // Simple form validation feedback
+    const submitBtn = this.querySelector(
+      'button[type="submit"]'
+    ) as HTMLButtonElement;
+    const originalText = submitBtn.innerHTML;
 
-  products.forEach((product: IProductabs) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
+    submitBtn.innerHTML =
+      '<i class="fas fa-spinner fa-spin mr-2"></i>Envoi en cours...';
+    submitBtn.disabled = true;
 
-    const figure = document.createElement("figure");
-    const img = document.createElement("img");
-    img.src = product.img;
-    img.alt = product.make;
-    figure.appendChild(img);
-    card.appendChild(figure);
+    // Simulate form submission
+    setTimeout(() => {
+      submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Message envoyé !';
+      submitBtn.classList.add("bg-green-500", "hover:bg-green-600");
 
-    const cardContent = document.createElement("div");
-    cardContent.classList.add("card-content");
-    const title = document.createElement("h3");
-    title.textContent = product.make;
-    const reference = document.createElement("h4");
-    reference.textContent = `Référence: ${product.reference}`;
-    cardContent.appendChild(reference);
+      setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        submitBtn.classList.remove("bg-green-500", "hover:bg-green-600");
+        this.reset();
+      }, 2000);
+    }, 1500);
+  }
+);
 
-    const description = document.createElement("p");
-    description.classList.add("detail");
-    description.textContent = product.description;
-    cardContent.appendChild(title);
-    cardContent.appendChild(description);
-    card.appendChild(cardContent);
+// Intersection Observer for animations
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -50px 0px",
+};
 
-    const btnMoreContainer = document.createElement("div");
-    btnMoreContainer.classList.add("btnMore-container");
-
-    const btnCat = document.createElement("a");
-    btnCat.href = "#";
-    btnCat.classList.add("btnMore");
-    btnCat.textContent = product.category;
-    btnCat.style.backgroundColor = product.backgroundColorButton;
-    btnMoreContainer.appendChild(btnCat);
-    card.appendChild(btnMoreContainer);
-
-    const btnPrice = document.createElement("a");
-    btnPrice.href = "#contact";
-    btnPrice.classList.add("btnPrice");
-    btnPrice.textContent = `${product.price}€`;
-    btnMoreContainer.appendChild(btnPrice);
-    card.appendChild(btnMoreContainer);
-
-    const btnViewMoreContainer = document.createElement("div");
-    btnViewMoreContainer.classList.add("container-ViewMore");
-    card.appendChild(btnViewMoreContainer);
-
-    const viewMore = document.createElement("button");
-    viewMore.type = "button";
-    const viewMoreId = `btn_${Date.now()}`;
-    viewMore.setAttribute("id", viewMoreId);
-    viewMore.textContent = "En savoir plus";
-    viewMore.classList.add("btnViewMore");
-    viewMore.addEventListener("click", handleClick);
-    btnViewMoreContainer.appendChild(viewMore);
-
-    selectionContainer.appendChild(card);
-  });
-}
-
-function handleClick(event: Event) {
-  const target = event.target as HTMLButtonElement;
-  if (!target) return;
-
-  const detailProduct = target.closest(".card")?.querySelector("p.detail");
-  if (!detailProduct) return;
-
-  detailProduct.classList.toggle("show");
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const filter = document.querySelector(".filter");
-  const btnShowFilter = document.querySelector(".btnShowFilter");
-  const allBtnViewMore = document.querySelectorAll(".btnViewMore");
-
-  displayProducts(productsTab);
-
-  let isFilterVisible = false;
-
-  btnShowFilter?.addEventListener("click", () => {
-    filter?.classList.toggle("showFilter");
-
-    isFilterVisible = !isFilterVisible;
-
-    if (isFilterVisible) {
-      btnShowFilter.textContent = "Cacher filtre";
-    } else {
-      btnShowFilter.textContent = "Afficher filtre";
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      (entry.target as HTMLElement).style.opacity = "1";
+      (entry.target as HTMLElement).style.transform = "translateY(0)";
     }
   });
-});
+}, observerOptions);
 
-/* Copyright dynamique */
-
-const copyright = document.querySelector("span.copyright") as HTMLElement;
-
-const date = new Date();
-const getDate = Date.now();
-const currentYear = date.getFullYear() as Date;
-
-if (copyright) {
-  copyright.textContent = currentYear;
-}
-
-// fixe navbar
+// Observe all animated elements
+document
+  .querySelectorAll(".animate-slide-up, .animate-scale, .animate-fade-in")
+  .forEach((el) => {
+    (el as HTMLElement).style.opacity = "0";
+    (el as HTMLElement).style.transform = "translateY(30px)";
+    (el as HTMLElement).style.transition =
+      "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+    observer.observe(el);
+  });
